@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+
+	<DebugType>full</DebugType>
+	<Optimization>false</Optimization>
+	  
   </PropertyGroup>
 
 </Project>
