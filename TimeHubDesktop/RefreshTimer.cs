@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace TimeHubDesktop
-{
+{   // Klasa odpowiedzialna za aktualizacje widoku czasu trwania sesji
     public class RefreshTimer
     {
         private readonly DispatcherTimer _timer;

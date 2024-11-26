@@ -20,6 +20,10 @@ namespace TimeHubDesktop
 
         private readonly WorkTimeTracker _workTimeTracker;
         private readonly RefreshTimer _refreshTimer;
+        private WorkPeriod? _currentWorkPeriod; // Inicjalizujemy wartość na początku do przechowywania obecnego okresu
+
+
+        private readonly IList<WorkPeriod> _WorkPeriods; //do przechowywania okresów obecnej sesji
 
         public MainWindow()
         {
@@ -31,6 +35,13 @@ namespace TimeHubDesktop
             // Inicjalizacja timer'a do aktualizacji czasu 
             _refreshTimer = new RefreshTimer(_workTimeTracker, UpdateTimeDisplay);
             _refreshTimer.Start();
+
+            //Inicjalizacja listy do przechowywania czasu
+            _WorkPeriods = [];
+
+            ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
+
+            
           
         }
 
@@ -50,6 +61,15 @@ namespace TimeHubDesktop
                 _workTimeTracker.StopTracking();
                 StartStopButton.Content = "Start";
                 Debug.WriteLine("Czas stop");
+                
+                
+                // Jeśli _currentWorkPeriod nie jest null, aktualizujemy sesję
+                if (_currentWorkPeriod != null)
+                {
+                    _currentWorkPeriod.PeriodEnd = DateTimeOffset.Now;
+                    _WorkPeriods.Add(_currentWorkPeriod);
+                }
+               
             }
             // jeśli jeszcze nie działa
             else
@@ -58,6 +78,13 @@ namespace TimeHubDesktop
                 _workTimeTracker.StartTracking();
                 StartStopButton.Content = "Stop";
                 Debug.WriteLine("Czas start");
+
+                //Tworzymy nową sesje
+                _currentWorkPeriod = new WorkPeriod
+                {
+                    PeriodStart = DateTimeOffset.Now
+                };
+
             }
 
         }
@@ -69,7 +96,24 @@ namespace TimeHubDesktop
             {
                 Debug.WriteLine($"Reset, czas: {_workTimeTracker.TotalWorkTime}");
                 _workTimeTracker.ResetTracking();
+
+                //Wyświetlamy dane o sesji
+                Debug.WriteLine("Current Work Periods:");
+
+                foreach (var workPeriod in _WorkPeriods)
+                {
+                    Debug.WriteLine($"Start = {workPeriod.PeriodStart}");
+                    Debug.WriteLine($"End = {workPeriod.PeriodEnd}");
+                    Debug.WriteLine($"Total Time = {workPeriod.PeriodTime}");
+                }
             }
+
+            // Czyścimy liste 
+            _WorkPeriods.Clear();
+
+            //Blokujemy przycisk do momentu nowej sesji
+            ResetButton.IsEnabled = false;
+
         }
 
 
