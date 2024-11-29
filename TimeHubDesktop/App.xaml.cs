@@ -16,18 +16,8 @@ namespace TimeHubDesktop
         {
             base.OnStartup(e);
 
-            // Generujemy nowy klucz do bazy danych jeśli nie został stworzonyy
-            if(EncryptionKeyManager.KeyExists() == false)
-            {
-                Debug.WriteLine("Tworzenie klucza dla bazy danych ");
-                EncryptionKeyManager.GenerateAndStoreKey();
+            AppInitializer.Initialize();
                
-            }
-
-            Debug.WriteLine("Wczytywanie klucza dla bazy danych ");
-            byte[] key = EncryptionKeyManager.RetrieveKey();
-
-
         }
 
 

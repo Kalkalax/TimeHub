@@ -10,21 +10,41 @@ using System.Windows.Input;
 
 namespace TimeHubDesktop
 {
+
+    /// <summary>
+    /// Klasa odpowiedzialna za dostarczenie szyfrowania bazy danych
+    /// </summary>
+    /// <returns>A string populated with random choices.</returns>
+    /// <exception>
+    ///  
+    /// </exception>
     public static class EncryptionKeyManager
     {
-        private const string KeyFilePath = "database_key.dat";
+        // 
+        public static readonly string KeyFilePath = Path.Combine(AppInitializer.AppDataDirectoryPath, "TimeHubDatabase_Key.dat");
 
-        // Metoda odpowiedzialna za generowanie klucza szyfrowania
+
+
+        /// <summary>
+        /// Metoda odpowiedzialna za generowanie klucza szyfrowania
+        /// </summary>
         public static void GenerateAndStoreKey()
         {
-            byte[] key = RandomNumberGenerator.GetBytes(64);
-            byte[] protectedKey = ProtectedData.Protect(key, null, DataProtectionScope.CurrentUser);
+            byte[] unprotectedKey = RandomNumberGenerator.GetBytes(64);
+            byte[] protectedKey = ProtectedData.Protect(unprotectedKey, null, DataProtectionScope.CurrentUser);
 
             File.WriteAllBytes(KeyFilePath, protectedKey);
-            Debug.WriteLine($"Key: {Convert.ToBase64String(key)}");
+
         }
 
-        // Metoda odpowiedzialna za sprawdzenie istnienia klucza szyfrowania 
+
+        /// <summary>
+        /// Metoda odpowiedzialna za sprawdzenie istnienia klucza szyfrowania.
+        /// </summary>
+        /// <returns>
+        /// <paramref name="true"/> jeśli plik istnieje, w przeciwnym razie false
+        /// </returns>
+
         public static bool KeyExists()
         {
             return File.Exists(KeyFilePath);
@@ -35,7 +55,11 @@ namespace TimeHubDesktop
         {
             byte[] protectedKey = File.ReadAllBytes(KeyFilePath);
             byte[] unprotectedKey = ProtectedData.Unprotect(protectedKey, null, DataProtectionScope.CurrentUser);
-            Debug.WriteLine($"Key: {Convert.ToBase64String(unprotectedKey)}");
+
+            // Wyświetlanie hex w debug
+            string hexString = BitConverter.ToString(unprotectedKey).Replace("-", "").ToLower();
+            Debug.WriteLine(hexString);
+
             return unprotectedKey;
 
         }

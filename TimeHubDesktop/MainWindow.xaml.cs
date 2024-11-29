@@ -9,21 +9,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using Realms;
+using System.Collections;
 
 namespace TimeHubDesktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    //public class RealmList<T> { };
     public partial class MainWindow : Window
     {
 
         private readonly WorkTimeTracker _workTimeTracker;
         private readonly RefreshTimer _refreshTimer;
-        private WorkPeriod? _currentWorkPeriod; // Inicjalizujemy wartość na początku do przechowywania obecnego okresu
+        private WorkPeriod _currentWorkPeriod; // Inicjalizujemy wartość na początku do przechowywania obecnego okresu
+                                                //RealmList(Iterable<T> items) => UnmanagedRealmList(items);
 
-
-        private readonly IList<WorkPeriod> _WorkPeriods; //do przechowywania okresów obecnej sesji
+        private readonly List<WorkPeriod> _WorkPeriods; // Zmieniamy na nie-nullowalną listę
+                                                             //do przechowywania okresów obecnej sesji
 
         public MainWindow()
         {
@@ -36,12 +40,11 @@ namespace TimeHubDesktop
             _refreshTimer = new RefreshTimer(_workTimeTracker, UpdateTimeDisplay);
             _refreshTimer.Start();
 
-            //Inicjalizacja listy do przechowywania czasu
+            //_WorkPeriods = new RealmList<WorkPeriod>();
             _WorkPeriods = [];
 
             ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
 
-            
           
         }
 
@@ -106,6 +109,9 @@ namespace TimeHubDesktop
                     Debug.WriteLine($"End = {workPeriod.PeriodEnd}");
                     Debug.WriteLine($"Total Time = {workPeriod.PeriodTime}");
                 }
+                DatabaseManager.SaveWorkSession(_WorkPeriods);
+
+          
             }
 
             // Czyścimy liste 
