@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TimeHubDesktop"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="300">
-    
+
     <Grid>
 
         <!-- Dodajemy etykiete czasu -->
@@ -17,7 +17,7 @@
                Margin="0,45,0,0" 
                FontSize="24"
         />
-        
+
         <!-- Dodajemy przycisk Start -->
         <Button x:Name="StartStopButton" 
                 Content="Start" 
@@ -39,6 +39,21 @@
                 Click="ResetButton_Click" 
                 Margin="0,147,0,0"
         />
+
+        <!-- Lista do wyświetlania danych -->
+        <ListView x:Name="DataListView" 
+                  VerticalAlignment="Top" 
+                  Margin="10,200,10,0" Height="230">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Start" DisplayMemberBinding="{Binding PeriodStart}" Width="90"/>
+                    <GridViewColumn Header="End" DisplayMemberBinding="{Binding PeriodEnd}" Width="90"/>
+                    <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding PeriodTime}" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
 
     </Grid>
 </Window>

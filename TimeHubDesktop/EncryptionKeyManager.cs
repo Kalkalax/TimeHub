@@ -20,7 +20,9 @@ namespace TimeHubDesktop
     /// </exception>
     public static class EncryptionKeyManager
     {
-        // 
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly string KeyFilePath = Path.Combine(AppInitializer.AppDataDirectoryPath, "TimeHubDatabase_Key.dat");
 
 
@@ -44,6 +46,7 @@ namespace TimeHubDesktop
         /// <returns>
         /// <paramref name="true"/> jeśli plik istnieje, w przeciwnym razie false
         /// </returns>
+        
 
         public static bool KeyExists()
         {

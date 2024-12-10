@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using Realms;
 using System.Collections;
+using TimeHubDesktop.Database.Models;
+//using TimeHubDesktop.Database;
 
 namespace TimeHubDesktop
 {
@@ -69,7 +71,8 @@ namespace TimeHubDesktop
                 // Jeśli _currentWorkPeriod nie jest null, aktualizujemy sesję
                 if (_currentWorkPeriod != null)
                 {
-                    _currentWorkPeriod.PeriodEnd = DateTimeOffset.Now;
+                    _currentWorkPeriod.PeriodEndTime = DateTime.Now.Ticks;
+                    _currentWorkPeriod.CalculatePeriodTime();
                     _WorkPeriods.Add(_currentWorkPeriod);
                 }
                
@@ -85,7 +88,7 @@ namespace TimeHubDesktop
                 //Tworzymy nową sesje
                 _currentWorkPeriod = new WorkPeriod
                 {
-                    PeriodStart = DateTimeOffset.Now
+                    PeriodStartTime = DateTime.Now.Ticks
                 };
 
             }
@@ -105,9 +108,9 @@ namespace TimeHubDesktop
 
                 foreach (var workPeriod in _WorkPeriods)
                 {
-                    Debug.WriteLine($"Start = {workPeriod.PeriodStart}");
-                    Debug.WriteLine($"End = {workPeriod.PeriodEnd}");
-                    Debug.WriteLine($"Total Time = {workPeriod.PeriodTime}");
+                    Debug.WriteLine($"Start = {new DateTime(workPeriod.PeriodStartTime):yyyy-MM-dd HH:mm:ss.fff}");
+                    Debug.WriteLine($"End = {new DateTime(workPeriod.PeriodEndTime):yyyy-MM-dd HH:mm:ss.fff}");
+                    Debug.WriteLine($"Total Time = {new DateTime(workPeriod.PeriodTime):HH:mm:ss.fff}");
                 }
                 DatabaseManager.SaveWorkSession(_WorkPeriods);
 
