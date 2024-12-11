@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeHubDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3b2b12d4244bc226b85ae78c7d7102862d6ef83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d40770a1f1197e9081517da2acf24237cc4b2a44")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeHubDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeHubDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

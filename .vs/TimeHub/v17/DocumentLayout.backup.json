@@ -3,68 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\TimeHubDesktop.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\license||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\license||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\Database\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\timehubdesktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\timehubdesktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\App.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\App.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\EncryptionKeyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\EncryptionKeyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\database\\models\\worksession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\database\\models\\worksession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeTracker\\WorkTimeTracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\TimeTracker\\WorkTimeTracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\database\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\database\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\TimeHubDesktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\encryptionkeymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\encryptionkeymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\timetracker\\refreshtimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\timetracker\\refreshtimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\timetracker\\worktimetracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\timetracker\\worktimetracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeTracker\\RefreshTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\TimeTracker\\RefreshTimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\AppInitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\AppInitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\database\\models\\workperiod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\database\\models\\workperiod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\FodyWeavers.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\FodyWeavers.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\appinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\appinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\fodyweavers.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\fodyweavers.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\Models\\WorkPeriod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\Database\\Models\\WorkPeriod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|c:\\users\\user\\desktop\\projekty github\\timehub\\timehubdesktop\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}|TimeHubDesktop\\TimeHubDesktop.csproj|solutionrelative:timehubdesktop\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\Models\\WorkSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeHubDesktop\\Database\\Models\\WorkSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,34 +70,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LICENSE",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\LICENSE",
-              "RelativeDocumentMoniker": "TimeHubDesktop\\LICENSE",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\LICENSE",
-              "RelativeToolTip": "TimeHubDesktop\\LICENSE",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-11T15:36:45.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\README.md",
-              "RelativeDocumentMoniker": "TimeHubDesktop\\README.md",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\README.md",
-              "RelativeToolTip": "TimeHubDesktop\\README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-11T15:35:33.082Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -111,12 +81,21 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimeHubDesktop.csproj.user",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj.user",
+              "RelativeDocumentMoniker": "TimeHubDesktop\\TimeHubDesktop.csproj.user",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj.user",
+              "RelativeToolTip": "TimeHubDesktop\\TimeHubDesktop.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2024-12-11T15:51:44.5Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "DatabaseManager.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\DatabaseManager.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\Database\\DatabaseManager.cs",
@@ -124,12 +103,11 @@
               "RelativeToolTip": "TimeHubDesktop\\Database\\DatabaseManager.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAuwIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:51:47.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:51:47.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\App.xaml.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\App.xaml.cs",
@@ -137,12 +115,11 @@
               "RelativeToolTip": "TimeHubDesktop\\App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:49:47.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:49:47.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "EncryptionKeyManager.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\EncryptionKeyManager.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\EncryptionKeyManager.cs",
@@ -150,12 +127,11 @@
               "RelativeToolTip": "TimeHubDesktop\\EncryptionKeyManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:51:52.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:51:52.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "WorkTimeTracker.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeTracker\\WorkTimeTracker.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\TimeTracker\\WorkTimeTracker.cs",
@@ -163,25 +139,23 @@
               "RelativeToolTip": "TimeHubDesktop\\TimeTracker\\WorkTimeTracker.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:50:07.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:50:07.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TimeHubDesktop.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj",
               "RelativeDocumentMoniker": "TimeHubDesktop\\TimeHubDesktop.csproj",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeHubDesktop.csproj",
               "RelativeToolTip": "TimeHubDesktop\\TimeHubDesktop.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-04T21:54:43.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:54:43.305Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\MainWindow.xaml.cs",
@@ -189,24 +163,22 @@
               "RelativeToolTip": "TimeHubDesktop\\MainWindow.xaml.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAEwH4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:49:40.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:49:40.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\App.xaml",
               "RelativeDocumentMoniker": "TimeHubDesktop\\App.xaml",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\App.xaml",
               "RelativeToolTip": "TimeHubDesktop\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-11T13:45:18.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T13:45:18.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "RefreshTimer.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\TimeTracker\\RefreshTimer.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\TimeTracker\\RefreshTimer.cs",
@@ -214,12 +186,11 @@
               "RelativeToolTip": "TimeHubDesktop\\TimeTracker\\RefreshTimer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:54:59.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:54:59.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "AppInitializer.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\AppInitializer.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\AppInitializer.cs",
@@ -227,12 +198,11 @@
               "RelativeToolTip": "TimeHubDesktop\\AppInitializer.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAhwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:51:18.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:51:18.949Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "FodyWeavers.xml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\FodyWeavers.xml",
               "RelativeDocumentMoniker": "TimeHubDesktop\\FodyWeavers.xml",
@@ -244,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\MainWindow.xaml",
               "RelativeDocumentMoniker": "TimeHubDesktop\\MainWindow.xaml",
@@ -255,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\AssemblyInfo.cs",
@@ -264,16 +234,20 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T21:51:45.622Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "WorkPeriod.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\Models\\WorkPeriod.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\Database\\Models\\WorkPeriod.cs",
@@ -286,16 +260,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "WorkSession.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\Models\\WorkSession.cs",
               "RelativeDocumentMoniker": "TimeHubDesktop\\Database\\Models\\WorkSession.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projekty GitHub\\TimeHub\\TimeHubDesktop\\Database\\Models\\WorkSession.cs",
               "RelativeToolTip": "TimeHubDesktop\\Database\\Models\\WorkSession.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:52:40.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:52:40.319Z"
             }
           ]
         }

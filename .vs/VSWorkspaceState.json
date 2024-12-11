@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TimeHubDesktop",
+    "\\TimeHubDesktop\\Database",
+    "\\TimeHubDesktop\\Database\\Models"
   ],
   "PreviewInSolutionExplorer": false
 }
