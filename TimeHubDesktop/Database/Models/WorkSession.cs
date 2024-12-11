@@ -31,7 +31,7 @@ namespace TimeHubDesktop.Database.Models
         #pragma warning restore CS8618
 
         /// <summary>
-        /// Całkowity czas pracy dla danej sesji, wyrażony w milisekundach.
+        /// Całkowity czas pracy dla danej sesji, wyrażony w milisekundach (Unix Timestamp).
         /// </summary>
         /// <remarks>
         /// Wartość ta jest obliczana na podstawie okresów pracy z listy <see cref="SessionWorkPeriods"/>.

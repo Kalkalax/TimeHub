@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeHubDesktop;
+using TimeHubDesktop.Database;
 
 namespace TimeHubDesktop
 {
@@ -54,13 +54,11 @@ namespace TimeHubDesktop
 
         private static void InitializeDatabase()
         {
-
             if (DatabaseManager.DatabaseExists() == false)
             {
                 Debug.WriteLine($"Tworzenie bazy danych: {DatabaseManager.DatabaseFilePath}");
-                DatabaseManager.InitializeDatabase();
             }
-
+            DatabaseManager.InitializeDatabase();
         }
         
         private static void CheckAppVersion() { }

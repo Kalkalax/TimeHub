@@ -12,6 +12,7 @@ using System.Diagnostics;
 using Realms;
 using System.Collections;
 using TimeHubDesktop.Database.Models;
+using TimeHubDesktop.Database;
 //using TimeHubDesktop.Database;
 
 namespace TimeHubDesktop
@@ -122,6 +123,22 @@ namespace TimeHubDesktop
 
             //Blokujemy przycisk do momentu nowej sesji
             ResetButton.IsEnabled = false;
+
+            //-----------------------------------------------------
+
+            var workSessions = DatabaseManager.GetAllWorkSessions();
+            Debug.WriteLine("╔═════════════════════════════════════╦════════════════════════════╦══════════════╗");
+            Debug.WriteLine("║ Session ID                          ║ Session Date               ║ Session Time ║");
+            Debug.WriteLine("╠═════════════════════════════════════╬════════════════════════════╬══════════════╣");
+            // Wyświetlamy wiersze danych
+            foreach (var session in workSessions)
+            {
+                Debug.WriteLine($"║ {session.SessionID,-35} ║ {session.SessionDate,-22} ║ {session.SessionTime,-12} ║");
+            }
+
+            // Wyświetlamy dolną granicę tabeli
+            Debug.WriteLine("╚═════════════════════════════════════╩════════════════════════════╩══════════════╝");
+
 
         }
 

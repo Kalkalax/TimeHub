@@ -25,7 +25,10 @@ namespace TimeHubDesktop
         /// </summary>
         public static readonly string KeyFilePath = Path.Combine(AppInitializer.AppDataDirectoryPath, "TimeHubDatabase_Key.dat");
 
-
+        public static bool KeyExists()
+        {
+            return File.Exists(KeyFilePath);
+        }
 
         /// <summary>
         /// Metoda odpowiedzialna za generowanie klucza szyfrowania
@@ -40,18 +43,7 @@ namespace TimeHubDesktop
         }
 
 
-        /// <summary>
-        /// Metoda odpowiedzialna za sprawdzenie istnienia klucza szyfrowania.
-        /// </summary>
-        /// <returns>
-        /// <paramref name="true"/> jeśli plik istnieje, w przeciwnym razie false
-        /// </returns>
-        
 
-        public static bool KeyExists()
-        {
-            return File.Exists(KeyFilePath);
-        }
 
         // Metod odpowiedzialna za odczyt klucza z zaszyfrowanego pliku
         public static byte[] RetrieveKey()
