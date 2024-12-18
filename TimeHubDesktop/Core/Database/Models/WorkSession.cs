@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using Realms;
 
-namespace TimeHubDesktop.Database.Models
+namespace TimeHubDesktop.Core.Database.Models
 {
     /// <summary>
     /// Reprezentuje sesję pracy użytkownika w systemie.
@@ -12,7 +12,7 @@ namespace TimeHubDesktop.Database.Models
         /// <summary>
         /// Unikalny identyfikator sesji pracy.
         /// </summary>
-        [PrimaryKey] 
+        [PrimaryKey]
         public ObjectId SessionID { get; set; } = ObjectId.GenerateNewId();
 
         /// <summary>
@@ -41,8 +41,12 @@ namespace TimeHubDesktop.Database.Models
         /// <summary>
         /// Oblicza całkowity czas pracy dla sesji na podstawie sumy czasów trwania poszczególnych okresów pracy.
         /// </summary>
-        public void CalculateSessionTime() 
-        { 
+        /// <remarks>
+        /// Czas projektu obliczany jest jako suma wartości <see cref="WorkPeriod.PeriodTime"/> 
+        /// dla wszystkich okresów pracy znajdujących się w <see cref="SessionWorkPeriods"/>.
+        /// </remarks>
+        public void CalculateSessionTime()
+        {
             SessionTime = SessionWorkPeriods.Sum(WorkPeriod => WorkPeriod.PeriodTime);
         }
     }

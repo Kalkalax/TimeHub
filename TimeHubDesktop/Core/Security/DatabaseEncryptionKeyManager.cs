@@ -1,8 +1,8 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Security.Cryptography;
-using System.Diagnostics;
 
-namespace TimeHubDesktop.Security
+namespace TimeHubDesktop.Core.Security
 {
     /// <summary>
     /// Klasa zapewniająca funkcjonalność bezpiecznego generowania, przechowywania 

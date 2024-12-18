@@ -1,18 +1,10 @@
-﻿using System.Text;
+﻿using MongoDB.Bson;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
-using Realms;
-using System.Collections;
-using TimeHubDesktop.Database.Models;
-using TimeHubDesktop.Database;
+using TimeHubDesktop.Core.Database;
+using TimeHubDesktop.Core.Database.Models;
+using TimeHubDesktop.Core.Timers;
 
 //TODO: Tu jest wszystko do zrobienia, wyczyścić kod, dopisać funkcje(minimalizowanie,usuwanie projektów), poprawić komentarze
 
@@ -23,7 +15,7 @@ namespace TimeHubDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        private NotifyIcon _notifyIcon;
         private readonly WorkTimeTracker _workTimeTracker;
         private readonly RefreshTimer _refreshTimer;
         private WorkPeriod _currentWorkPeriod; // Inicjalizujemy wartość na początku do przechowywania obecnego okresu
@@ -48,10 +40,52 @@ namespace TimeHubDesktop
             //_WorkPeriods = new RealmList<WorkPeriod>();
             _WorkPeriods = [];
 
+            // Inicjalizacja ikony zasobnika
+            _notifyIcon = new NotifyIcon
+            {
+                //Icon = new Icon("app.ico"), // Ustaw ikonę aplikacji
+                Icon = SystemIcons.Information,
+                Visible = false,
+                Text = "TimeHubDesktop - Kliknij, aby przywrócić"
+            };
+
+            // Obsługa zdarzenia kliknięcia w ikonę
+            _notifyIcon.Click += NotifyIcon_Click;
+        
+
+
+
             ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
             StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
+            DeleteProjectButton.IsEnabled = false;
 
+        }
 
+        private void NotifyIcon_Click(object? sender, EventArgs e)
+        {
+            Show();
+            WindowState = WindowState.Normal;
+            _notifyIcon.Visible = false;
+        }
+
+        // Obsługa zamykania okna
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            // Chowamy aplikację do zasobnika tylko, jeśli czas jest mierzony
+            if (_workTimeTracker.IsTracking)
+            {
+                e.Cancel = true;
+                Hide();
+                _notifyIcon.Visible = true;
+            }
+            else
+            {
+                _notifyIcon.Visible = false;
+                _notifyIcon.Dispose();
+                System.Windows.Application.Current.Shutdown();
+            }
         }
 
         // Metoda, która będzie wywoływana przez RefreshTimer do zaktualizowania UI
@@ -87,6 +121,7 @@ namespace TimeHubDesktop
                 ResetButton.IsEnabled = false;
                 ProjectsComboBox.IsEnabled = false;
                 AddProjectButton.IsEnabled = false;
+                DeleteProjectButton.IsEnabled = false;
 
                 _workTimeTracker.StartTracking();
                 StartStopButton.Content = "Stop";
@@ -135,6 +170,7 @@ namespace TimeHubDesktop
             //Odblokowujemy liste do zmiany 
             ProjectsComboBox.IsEnabled = true;
             AddProjectButton.IsEnabled = true;
+            DeleteProjectButton.IsEnabled = true;
 
             UpdateListView();
 
@@ -144,6 +180,7 @@ namespace TimeHubDesktop
         {
             // Włącz lub wyłącz przycisk na podstawie wybranej wartości
             StartStopButton.IsEnabled = ProjectsComboBox.SelectedItem != null;
+            DeleteProjectButton.IsEnabled = true;
             UpdateListView();
         }
 
@@ -157,26 +194,40 @@ namespace TimeHubDesktop
 
             List<Project> projects = [.. DatabaseManager.GetAllProjects()];
 
+            if (projects.Count == 0)
+            {
+                DeleteProjectButton.IsEnabled = false;
+                ProjectsComboBox.IsEnabled = false;
+            }
+
             // Ustaw źródło danych dla ComboBox
             ProjectsComboBox.ItemsSource = projects;
         }
 
         private void UpdateListView()
         {
-            var selectedProject = ProjectsComboBox.SelectedItem as Project;
-            Debug.WriteLine($"{selectedProject.ProjectID}");
-
-            // Pobranie wybranego projektu
-            selectedProject = DatabaseManager.GetProjectById(selectedProject.ProjectID);
-
-            if (selectedProject != null)
+            if (ProjectsComboBox.SelectedItem is Project selectedProject)
             {
-                // Aktualizacja ListView z sesjami pracy
-                DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
+                Debug.WriteLine($"{selectedProject.ProjectID}");
+
+                // Pobranie wybranego projektu
+                selectedProject = DatabaseManager.GetProjectById(selectedProject.ProjectID);
+
+                if (selectedProject != null)
                 {
-                    Date = WorkSession.SessionDate.ToString("d"),
-                    Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
-                }).ToList();
+                    // Aktualizacja ListView z sesjami pracy
+                    DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
+                    {
+                        Date = WorkSession.SessionDate.ToString("d"),
+                        Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
+                    }).ToList();
+
+                    UpdateTotalTimeDisplay(selectedProject.ProjectID);
+                }
+            }
+            else
+            {
+                DataListView.ItemsSource = null;
             }
         }
 
@@ -192,13 +243,87 @@ namespace TimeHubDesktop
                 string enteredName = nameInputWindow.EnteredName;
                 Debug.WriteLine($"Wprowadzona nazwa: {enteredName}");
                 DatabaseManager.AddProject(enteredName);
+                
+                
                 LoadProjects();
+
+                ProjectsComboBox.IsEnabled = true;
+
+                var newProject = DatabaseManager.GetAllProjects().FirstOrDefault(p => p.ProjectName == enteredName);
+
+                // Ustaw nowo dodany projekt jako wybrany w ComboBox
+                if (newProject != null)
+                {
+                    ProjectsComboBox.SelectedItem = newProject;
+                }
+            }
+        }
+
+        private void DeleteProjectButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Sprawdzenie, czy projekt został wybrany
+            if (ProjectsComboBox.SelectedItem is not Project selectedProject)
+            {
+                System.Windows.MessageBox.Show("Wybierz projekt, który chcesz usunąć.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; // Przerwij, jeśli projekt nie jest wybrany
             }
 
+            // Potwierdzenie przed usunięciem
+            var confirmation = System.Windows.MessageBox.Show(
+                $"Czy na pewno chcesz usunąć projekt: {selectedProject.ProjectName}?",
+                "Potwierdzenie usunięcia",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if (confirmation == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    // Usunięcie projektu
+
+                    Debug.WriteLine($"Projekt do usunięcia: {selectedProject.ProjectID}");
+
+                    DatabaseManager.DeleteProject(selectedProject.ProjectID);
+
+                    ProjectsComboBox.SelectedItem = null;
+                    
+
+                    // Załaduj ponownie projekty po usunięciu
+                    LoadProjects();
+                    UpdateListView();
+                    //UpdateTotalTimeDisplay();
+
+                    System.Windows.MessageBox.Show("Projekt został pomyślnie usunięty.", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Obsługa błędów
+                    System.Windows.MessageBox.Show($"Wystąpił błąd podczas usuwania projektu: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
 
+        private void UpdateTotalTimeDisplay(ObjectId? projectId = null)
+        {
+            if (projectId == null)
+            {
+                // Jeśli brak projectId, wyczyść TextBlock lub ustaw domyślny tekst
+                TotalTimeTextBlock.Text = "Łączny czas: 00:00:00";
+                return;
+            }
+                //obierz łączny czas z bazy danych
+                TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
+
+                // Zaktualizuj tekst w TextBlock
+                TotalTimeTextBlock.Text = $"Łączny czas: {totalTime:h\\:mm\\:ss}";
+            
+        }
     }
+}
+    
+
+
 
     
-}

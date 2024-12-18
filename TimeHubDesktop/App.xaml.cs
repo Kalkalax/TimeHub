@@ -1,14 +1,11 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Diagnostics;
-using System.Windows;
+﻿using System.Windows;
 
 //TODO: Napisać summary
 
 namespace TimeHubDesktop
 {
-  
-    public partial class App : Application
+
+    public partial class App : System.Windows.Application
     {
         
         // Metoda uruchamiana podczas startu systemu
