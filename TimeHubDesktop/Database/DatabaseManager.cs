@@ -1,9 +1,11 @@
-﻿using Realms;
+﻿using MongoDB.Bson;
+using Realms;
 using System.IO;
 using TimeHubDesktop.Database.Models;
+using TimeHubDesktop.Security;
 
 //TODO: Dodać model odpowiedzialny za przetrzymywanie projektów i zaimplementować.
-
+//TODO: Opis, usunąć ostrzerzenia i błędy
 namespace TimeHubDesktop.Database
 {
     /// <summary>
@@ -46,15 +48,12 @@ namespace TimeHubDesktop.Database
         /// </summary>
         public static void InitializeDatabase()
         {
-            if (_realmConfiguration == null)
-            {
-                _realmConfiguration = new RealmConfiguration(DatabaseFilePath)
+            _realmConfiguration ??= new RealmConfiguration(DatabaseFilePath)
                 {
                     SchemaVersion = 1,
-                    EncryptionKey = EncryptionKeyManager.RetrieveKey(),
+                    EncryptionKey = DatabaseEncryptionKeyManager.GetKey(),
                     IsReadOnly = false
                 };
-            }
 
             _realmInstance = Realm.GetInstance(_realmConfiguration);
         }
@@ -76,14 +75,31 @@ namespace TimeHubDesktop.Database
             return _realmInstance;
         }
 
+
+        public static void AddProject(string projectName)
+        {
+            var realmInstance = GetRealmInstance();
+            // Zapisanie nowego projektu do bazy
+            realmInstance.Write(() =>
+            {
+                var project = new Project
+                {
+                    ProjectName = projectName,
+                };
+                realmInstance.Add(project);
+            });
+        }
+
+
         /// <summary>
         /// Zapisuje sesję pracy do bazy danych Realm.
         /// </summary>
         /// <param name="workPeriods">Lista okresów pracy.</param>
-        public static void SaveWorkSession(List<WorkPeriod> workPeriods)
+        public static void SaveWorkSession(ObjectId projectId, List<WorkPeriod> workPeriods)
         {
             var realmInstance = GetRealmInstance();
             var workSession = new WorkSession();
+            var project = realmInstance.All<Project>().FirstOrDefault(p => p.ProjectID == projectId);
 
             realmInstance.Write(() =>
             {
@@ -95,8 +111,17 @@ namespace TimeHubDesktop.Database
 
                 workSession.CalculateSessionTime();
                 realmInstance.Add(workSession);
+
+                project.ProjectWorkSessions.Add(workSession);
+                project.CalculateProjectTime();
+
+
             });
+
+
         }
+
+
 
         /// <summary>
         /// Pobiera wszystkie rekordy z tabeli <see cref="WorkSession"/> w bazie danych Realm.
@@ -124,6 +149,22 @@ namespace TimeHubDesktop.Database
 
             return realmInstance.All<WorkSession>();
         }
- 
+
+
+        public static IQueryable<Project> GetAllProjects()
+        {
+            var realmInstance = GetRealmInstance();
+
+            return realmInstance.All<Project>();
+        }
+
+        public static Project GetProjectById(ObjectId projectId)
+        {
+            var realmInstance = GetRealmInstance();
+            var project = realmInstance.Find<Project>(projectId);
+
+            return project ?? throw new InvalidOperationException($"Project with ID {projectId} not found.");
+        }
+
     }
 }

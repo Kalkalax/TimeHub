@@ -13,14 +13,14 @@ using Realms;
 using System.Collections;
 using TimeHubDesktop.Database.Models;
 using TimeHubDesktop.Database;
-//using TimeHubDesktop.Database;
+
+//TODO: Tu jest wszystko do zrobienia, wyczyścić kod, dopisać funkcje(minimalizowanie,usuwanie projektów), poprawić komentarze
 
 namespace TimeHubDesktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    //public class RealmList<T> { };
     public partial class MainWindow : Window
     {
 
@@ -36,6 +36,8 @@ namespace TimeHubDesktop
         {
             InitializeComponent();
 
+            LoadProjects();
+
             // Tworzymy obiekt WorkTimeTracker
             _workTimeTracker = new WorkTimeTracker();
 
@@ -47,8 +49,9 @@ namespace TimeHubDesktop
             _WorkPeriods = [];
 
             ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
+            StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
 
-          
+
         }
 
         // Metoda, która będzie wywoływana przez RefreshTimer do zaktualizowania UI
@@ -72,7 +75,7 @@ namespace TimeHubDesktop
                 // Jeśli _currentWorkPeriod nie jest null, aktualizujemy sesję
                 if (_currentWorkPeriod != null)
                 {
-                    _currentWorkPeriod.PeriodEndTime = DateTime.Now.Ticks;
+                    _currentWorkPeriod.PeriodEndTime = DateTime.Now.Ticks / 10000;
                     _currentWorkPeriod.CalculatePeriodTime();
                     _WorkPeriods.Add(_currentWorkPeriod);
                 }
@@ -82,6 +85,9 @@ namespace TimeHubDesktop
             else
             {
                 ResetButton.IsEnabled = false;
+                ProjectsComboBox.IsEnabled = false;
+                AddProjectButton.IsEnabled = false;
+
                 _workTimeTracker.StartTracking();
                 StartStopButton.Content = "Stop";
                 Debug.WriteLine("Czas start");
@@ -89,7 +95,7 @@ namespace TimeHubDesktop
                 //Tworzymy nową sesje
                 _currentWorkPeriod = new WorkPeriod
                 {
-                    PeriodStartTime = DateTime.Now.Ticks
+                    PeriodStartTime = DateTime.Now.Ticks / 10000
                 };
 
             }
@@ -113,7 +119,9 @@ namespace TimeHubDesktop
                     Debug.WriteLine($"End = {new DateTime(workPeriod.PeriodEndTime):yyyy-MM-dd HH:mm:ss.fff}");
                     Debug.WriteLine($"Total Time = {new DateTime(workPeriod.PeriodTime):HH:mm:ss.fff}");
                 }
-                DatabaseManager.SaveWorkSession(_WorkPeriods);
+
+                var selectedProject = ProjectsComboBox.SelectedItem as Project;
+                DatabaseManager.SaveWorkSession(selectedProject.ProjectID, _WorkPeriods);
 
           
             }
@@ -124,26 +132,73 @@ namespace TimeHubDesktop
             //Blokujemy przycisk do momentu nowej sesji
             ResetButton.IsEnabled = false;
 
-            //-----------------------------------------------------
+            //Odblokowujemy liste do zmiany 
+            ProjectsComboBox.IsEnabled = true;
+            AddProjectButton.IsEnabled = true;
 
-            var workSessions = DatabaseManager.GetAllWorkSessions();
-            Debug.WriteLine("╔═════════════════════════════════════╦════════════════════════════╦══════════════╗");
-            Debug.WriteLine("║ Session ID                          ║ Session Date               ║ Session Time ║");
-            Debug.WriteLine("╠═════════════════════════════════════╬════════════════════════════╬══════════════╣");
-            // Wyświetlamy wiersze danych
-            foreach (var session in workSessions)
-            {
-                Debug.WriteLine($"║ {session.SessionID,-35} ║ {session.SessionDate,-22} ║ {session.SessionTime,-12} ║");
-            }
+            UpdateListView();
 
-            // Wyświetlamy dolną granicę tabeli
-            Debug.WriteLine("╚═════════════════════════════════════╩════════════════════════════╩══════════════╝");
+        }
 
-
+        private void ProjectsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Włącz lub wyłącz przycisk na podstawie wybranej wartości
+            StartStopButton.IsEnabled = ProjectsComboBox.SelectedItem != null;
+            UpdateListView();
         }
 
 
 
 
+        private void LoadProjects()
+        {
+            // Pobierz listę projektów z bazy danych
+            //List<Project> projects = _realm.All<Project>().ToList();
+
+            List<Project> projects = [.. DatabaseManager.GetAllProjects()];
+
+            // Ustaw źródło danych dla ComboBox
+            ProjectsComboBox.ItemsSource = projects;
+        }
+
+        private void UpdateListView()
+        {
+            var selectedProject = ProjectsComboBox.SelectedItem as Project;
+            Debug.WriteLine($"{selectedProject.ProjectID}");
+
+            // Pobranie wybranego projektu
+            selectedProject = DatabaseManager.GetProjectById(selectedProject.ProjectID);
+
+            if (selectedProject != null)
+            {
+                // Aktualizacja ListView z sesjami pracy
+                DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
+                {
+                    Date = WorkSession.SessionDate.ToString("d"),
+                    Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
+                }).ToList();
+            }
+        }
+
+        private void AddProjectButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Tworzymy instancję okna
+            NameInputWindow nameInputWindow = new();
+
+            // Wywołujemy okno i sprawdzamy, czy użytkownik kliknął "OK"
+            if (nameInputWindow.ShowDialog() == true)
+            {
+                // Pobieramy wprowadzone dane (nazwę)
+                string enteredName = nameInputWindow.EnteredName;
+                Debug.WriteLine($"Wprowadzona nazwa: {enteredName}");
+                DatabaseManager.AddProject(enteredName);
+                LoadProjects();
+            }
+
+        }
+
+
     }
+
+    
 }

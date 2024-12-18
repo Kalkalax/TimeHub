@@ -5,10 +5,11 @@ VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeHubDesktop", "TimeHubDesktop\TimeHubDesktop.csproj", "{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{46E3D7C7-7482-424F-A279-0971715832F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{57DBB89C-B7DE-46C7-875F-948AA6D350E6}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
+		UML.png = UML.png
 	EndProjectSection
 EndProject
 Global
@@ -24,8 +25,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{EE6B5ED3-A81B-4C64-B8E2-30DA5FEE7C94} = {46E3D7C7-7482-424F-A279-0971715832F3}
 	EndGlobalSection
 EndGlobal

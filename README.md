@@ -30,8 +30,16 @@ class WorkPeriod {
     + CalculatePeriodTime(): void
 }
 
+' Klasa DatabaseEncryptionKeyManager
+class DatabaseEncryptionKeyManager {
+    - DatabaseEncryptionKeyFilePath: string
+    + KeyExists(): bool
+    + GenerateAndStoreKey(): void
+    + GetKey(): byte[]
+}
+
 ' Relacje
 DatabaseManager "1" --> "0..*" WorkSession : "manages"
 WorkSession "1" *-- "0..*" WorkPeriod : "contains"
-DatabaseManager "1" ..> "0..*" EncryptionKeyManager : "depends on"
+DatabaseManager "1" ..> "0..*" DatabaseEncryptionKeyManager : "depends on"
 @enduml

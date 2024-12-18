@@ -6,13 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TimeHubDesktop.Database;
+using TimeHubDesktop.Security;
+
+//TODO: Napisać summary
 
 namespace TimeHubDesktop
 {
     public static class AppInitializer
     {
-        public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "TimeHub");
+        public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TimeHub");
+       
         public static readonly string DatabaseDirectoryPath = Path.Combine(AppDataDirectoryPath, "Database");
 
 
@@ -44,10 +47,10 @@ namespace TimeHubDesktop
         {
 
             // Generujemy nowy klucz do bazy danych jeśli nie został jeszczee stworzonyy
-            if (EncryptionKeyManager.KeyExists() == false)
+            if (DatabaseEncryptionKeyManager.KeyExists() == false)
             {
-                Debug.WriteLine($"Tworzenie klucza bazy danych: {EncryptionKeyManager.KeyFilePath}");
-                EncryptionKeyManager.GenerateAndStoreKey();
+                Debug.WriteLine($"Tworzenie klucza bazy danych: {DatabaseEncryptionKeyManager.DatabaseEncryptionKeyFilePath}");
+                DatabaseEncryptionKeyManager.GenerateAndStoreKey();
 
             }
         }

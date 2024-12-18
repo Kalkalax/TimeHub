@@ -9,12 +9,23 @@
 
     <Grid>
 
+        <!-- Dodajemy liste wyboru projektu -->
+        <ComboBox x:Name="ProjectsComboBox" 
+                  Margin="0,43,0,396" 
+                  Height="50" 
+                  DisplayMemberPath="ProjectName"
+                  SelectedValuePath="ProjectID"
+                  SelectionChanged="ProjectsComboBox_SelectionChanged" 
+                  HorizontalAlignment="Center" 
+                  Width="280"
+        />
+
         <!-- Dodajemy etykiete czasu -->
         <Label x:Name="TimeLabel" 
                Content="00:00:00" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Top" 
-               Margin="0,45,0,0" 
+               Margin="0,98,0,0" 
                FontSize="24"
         />
 
@@ -26,7 +37,7 @@
                 Width="100" 
                 Height="50" 
                 Click="StartStopButton_Click" 
-                Margin="0,92,0,0"
+                Margin="0,145,0,0"
         />
 
         <!-- Dodajemy przycisk Start -->
@@ -37,23 +48,35 @@
                 Width="60" 
                 Height="21" 
                 Click="ResetButton_Click" 
-                Margin="0,147,0,0"
+                Margin="0,200,0,0"
         />
 
         <!-- Lista do wyświetlania danych -->
         <ListView x:Name="DataListView" 
                   VerticalAlignment="Top" 
-                  Margin="10,200,10,0" Height="230">
+                  Margin="10,244,10,0" Height="230">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Start" DisplayMemberBinding="{Binding PeriodStart}" Width="90"/>
-                    <GridViewColumn Header="End" DisplayMemberBinding="{Binding PeriodEnd}" Width="90"/>
-                    <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding PeriodTime}" Width="90"/>
+                    <GridViewColumn Header="Data" DisplayMemberBinding="{Binding Date}" Width="135"/>
+                    <GridViewColumn Header="Czas" DisplayMemberBinding="{Binding Time}" Width="135"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
 
+        <Button x:Name="AddProjectButton" 
+            Content="Dodaj projekt" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Width="91" 
+            Height="30" 
+            Click="AddProjectButton_Click" 
+            Margin="199,10,0,0"
+        />
 
+        <!-- TODO: Dodać przycisk do usuwania i komentarze-->
+        
     </Grid>
 </Window>
+
+

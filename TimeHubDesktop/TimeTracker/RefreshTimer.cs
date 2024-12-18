@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
+//TODO: Zweryfikować, napisać summary, dodać do UML
+
 namespace TimeHubDesktop
 {   // Klasa odpowiedzialna za aktualizacje widoku czasu trwania sesji
     public class RefreshTimer

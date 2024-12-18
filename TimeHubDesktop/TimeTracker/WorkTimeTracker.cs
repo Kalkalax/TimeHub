@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//TODO: Zweryfikować, napisać summary, dodać do UML
+
 namespace TimeHubDesktop
 {
     // Klasa odpowiedzialna za śledzenie czasu pracy

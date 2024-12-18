@@ -3,11 +3,11 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows;
 
+//TODO: Napisać summary
+
 namespace TimeHubDesktop
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+  
     public partial class App : Application
     {
         
