@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace TimeHubDesktop.Core.Security
+namespace TiCloud.Core.Security
 {
     /// <summary>
     /// Klasa zapewniająca funkcjonalność bezpiecznego generowania, przechowywania 
@@ -13,7 +13,7 @@ namespace TimeHubDesktop.Core.Security
         /// <summary>
         /// Ścieżka do pliku, w którym przechowywany jest zaszyfrowany klucz bazy danych.
         /// </summary>
-        public static readonly string DatabaseEncryptionKeyFilePath = Path.Combine(AppInitializer.AppDataDirectoryPath, "TimeHubDatabase_Key.dat");
+        public static readonly string DatabaseEncryptionKeyFilePath = Path.Combine(AppInitializer.AppDataDirectoryPath, "TiCloudDatabase_Key.dat");
 
         /// <summary>
         /// Sprawdza, czy plik zawierający zaszyfrowany klucz bazy danych już istnieje.

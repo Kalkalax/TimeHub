@@ -2,7 +2,7 @@
 
 //TODO: Napisać summary
 
-namespace TimeHubDesktop
+namespace TiCloud
 {
 
     public partial class App : System.Windows.Application

@@ -17,4 +17,10 @@
     <PackageReference Include="Realm" Version="20.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="resources\images\TiCloud_eGp_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

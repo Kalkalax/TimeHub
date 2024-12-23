@@ -2,13 +2,15 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using TimeHubDesktop.Core.Database;
-using TimeHubDesktop.Core.Database.Models;
-using TimeHubDesktop.Core.Timers;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
+using TiCloud.Core.Database;
+using TiCloud.Core.Database.Models;
+using TiCloud.Core.Timers;
 
 //TODO: Tu jest wszystko do zrobienia, wyczyścić kod, dopisać funkcje(minimalizowanie,usuwanie projektów), poprawić komentarze
 
-namespace TimeHubDesktop
+namespace TiCloud
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -18,17 +20,21 @@ namespace TimeHubDesktop
         private NotifyIcon _notifyIcon;
         private readonly WorkTimeTracker _workTimeTracker;
         private readonly RefreshTimer _refreshTimer;
-        private WorkPeriod _currentWorkPeriod; // Inicjalizujemy wartość na początku do przechowywania obecnego okresu
-                                                //RealmList(Iterable<T> items) => UnmanagedRealmList(items);
+        private WorkPeriod _currentWorkPeriod;
+                                              
 
-        private readonly List<WorkPeriod> _WorkPeriods; // Zmieniamy na nie-nullowalną listę
-                                                             //do przechowywania okresów obecnej sesji
+        private readonly List<WorkPeriod> _WorkPeriods;
+                                                            
 
         public MainWindow()
         {
             InitializeComponent();
 
             LoadProjects();
+
+            // Ustawienie ikony z zasobu osadzonego
+            Icon icon = new Icon(IconManager.TiCloudIconPath);
+            this.Icon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
 
             // Tworzymy obiekt WorkTimeTracker
             _workTimeTracker = new WorkTimeTracker();
@@ -43,10 +49,11 @@ namespace TimeHubDesktop
             // Inicjalizacja ikony zasobnika
             _notifyIcon = new NotifyIcon
             {
-                //Icon = new Icon("app.ico"), // Ustaw ikonę aplikacji
-                Icon = SystemIcons.Information,
+                Icon = new Icon(IconManager.TiCloudIconPath), // Ustaw ikonę aplikacji
+                //Icon = SystemIcons.Information,
+                //Icon = new System.Drawing.Icon(TrayIconManager.TiCloudIconPath),
                 Visible = false,
-                Text = "TimeHubDesktop - Kliknij, aby przywrócić"
+                Text = "TiCloud Desktop - Kliknij, aby przywrócić"
             };
 
             // Obsługa zdarzenia kliknięcia w ikonę
@@ -317,8 +324,13 @@ namespace TimeHubDesktop
                 TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
 
                 // Zaktualizuj tekst w TextBlock
-                TotalTimeTextBlock.Text = $"Łączny czas: {totalTime:h\\:mm\\:ss}";
+                TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
             
+        }
+
+        private void DataListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

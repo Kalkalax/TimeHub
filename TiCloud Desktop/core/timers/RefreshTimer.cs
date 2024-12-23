@@ -1,6 +1,6 @@
 ﻿using System.Windows.Threading;
 
-namespace TimeHubDesktop.Core.Timers
+namespace TiCloud.Core.Timers
 
 {   /// <summary>
     /// Klasa odpowiedzialna za odświeżanie widoku czasu trwania sesji pracy.

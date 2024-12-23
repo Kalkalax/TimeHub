@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace TimeHubDesktop.Core.Timers
+namespace TiCloud.Core.Timers
 {
     /// <summary>
     /// Klasa odpowiedzialna za śledzenie czasu pracy użytkownika.

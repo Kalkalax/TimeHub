@@ -1,10 +1,10 @@
 ﻿using MongoDB.Bson;
 using Realms;
 using System.IO;
-using TimeHubDesktop.Core.Database.Models;
-using TimeHubDesktop.Core.Security;
+using TiCloud.Core.Database.Models;
+using TiCloud.Core.Security;
 
-namespace TimeHubDesktop.Core.Database
+namespace TiCloud.Core.Database
 {
     /// <summary>
     /// Klasa zarządzająca operacjami na bazie danych Realm.
@@ -28,7 +28,7 @@ namespace TimeHubDesktop.Core.Database
         /// <summary>
         /// Ścieżka do pliku bazy danych Realm.
         /// </summary>
-        public static readonly string DatabaseFilePath = Path.Combine(AppInitializer.DatabaseDirectoryPath, "TimeHubDatabase.realm");
+        public static readonly string DatabaseFilePath = Path.Combine(AppInitializer.DatabaseDirectoryPath, "TiCloudDatabase.realm");
 
         /// <summary>
         /// Sprawdza, czy plik bazy danych istnieje w określonej ścieżce.
@@ -102,7 +102,12 @@ namespace TimeHubDesktop.Core.Database
             });
         }
 
-        //TODO: 
+        /// <summary>
+        /// Usuwa projekt oraz wszystkie powiązane sesje pracy i okresy pracy z bazy danych.
+        /// Jeśli projekt o podanym identyfikatorze nie zostanie znaleziony, zostanie rzucony wyjątek <see cref="InvalidOperationException"/>.
+        /// </summary>
+        /// <param name="projectId">Unikalny identyfikator projektu, który ma zostać usunięty.</param>
+        /// <exception cref="InvalidOperationException">Jeśli projekt o podanym identyfikatorze nie istnieje.</exception>
         public static void DeleteProject(ObjectId projectId)
         {
             var realmInstance = GetRealmInstance();
@@ -211,6 +216,13 @@ namespace TimeHubDesktop.Core.Database
             return project ?? throw new InvalidOperationException($"Project with ID {projectId} not found.");
         }
 
+        /// <summary>
+        /// Zwraca całkowity czas spędzony na projekcie na podstawie jego identyfikatora ProjectID.
+        /// Czas jest pobierany z przechowywanej wartości czasu w milisekundach i konwertowany na obiekt TimeSpan.
+        /// </summary>
+        /// <param name="projectId">Unikalny identyfikator projektu.</param>
+        /// <returns>Obiekt <see cref="TimeSpan"/> reprezentujący całkowity czas spędzony na projekcie. 
+        /// Zwraca <see cref="TimeSpan.Zero"/> jeśli projekt nie został znaleziony.</returns>
         public static TimeSpan GetTotalTimeSpentOnProject(ObjectId projectId)
         {
             var realmInstance = GetRealmInstance();

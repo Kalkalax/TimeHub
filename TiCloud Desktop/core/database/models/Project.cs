@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using Realms;
 
-namespace TimeHubDesktop.Core.Database.Models
+namespace TiCloud.Core.Database.Models
 {
     /// <summary>
     /// Reprezentuje projekt użytkownika w systemie.

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TimeHubDesktop
+namespace TiCloud
 {
     //TODO: napisać summary i dopisać funkcje na anuluj i informacje gdy jest pusty i sprawdzanie czy nazwa jest wykorzystana ?
     /// <summary>
