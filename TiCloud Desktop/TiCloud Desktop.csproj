@@ -10,8 +10,15 @@
 	
 	<DebugType>full</DebugType>
 	<Optimization>false</Optimization>
+	<ApplicationIcon>resources\images\TiCloud_eGp_icon.ico</ApplicationIcon>
+	<StartupObject>TiCloud.App</StartupObject>
+	<SignAssembly>False</SignAssembly>
 	  
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="resources\images\TiCloud_eGp_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Realm" Version="20.0.0" />

@@ -14,8 +14,8 @@ namespace TiCloud
         /// <summary>
         /// Ścieżka do katalogu danych aplikacji w folderze aplikacji użytkownika.
         /// </summary>
-        //public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiCloud");
-        public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiCloudTest");
+        public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiCloud");
+        //public static readonly string AppDataDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiCloudTest");
 
         /// <summary>
         /// Ścieżka do katalogu, w którym przechowywana jest baza danych aplikacji.
