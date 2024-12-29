@@ -67,8 +67,8 @@ $RECYCLE.BIN/
 *.edmx.sql
 
 # Compiled files
-*.dll
-*.exe
+# *.dll
+# *.exe
 *.so
 *.dylib
 *.class
