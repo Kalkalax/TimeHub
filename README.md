@@ -49,7 +49,7 @@ If you are interested in the source code or want to introduce your own implement
 
 <details>
   <summary>Read more</summary>
-  Każdy z branchów zawiera inna zawartość i w zależności od twoich preferencji można zainstalować aplikacje na kilka sposobów:
+  Each branch contains different content and, depending on your preferences, you can install applications in several ways:
 
   - `release`<sup>1</sup> - contains an application installer that will guide you through the entire process
   - `master` - contains a compiled version of the application ready to use (_without installer_)
