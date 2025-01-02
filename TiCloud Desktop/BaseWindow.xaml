@@ -1,0 +1,115 @@
+﻿<Window x:Class="TiCloud_Desktop.BaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiCloud_Desktop"
+        mc:Ignorable="d"
+        Title="BaseWindow" Height="800" Width="1280"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <!--Podział widoku na wiersze-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="105*"/>
+            <RowDefinition Height="421*"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="210.297"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+
+        <!--Podział widoku na kolumny-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24"/>
+            <ColumnDefinition Width="338.286"/>
+            <ColumnDefinition Width="24"/>
+            <ColumnDefinition Width="338.286"/>
+            <ColumnDefinition Width="24"/>
+            <ColumnDefinition Width="507.428"/>
+            <ColumnDefinition Width="24"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Ikona aplikacji-->
+        <Image 
+            Source="/TEST_IMAGE.png" 
+            Margin="4,28,269,24" 
+            Grid.Column="1" 
+        />
+
+        <!--Nazwa aplikacji-->
+        <TextBlock 
+            Text="TiCloud" 
+            Grid.Column="1" 
+            Margin="82,39,169,27" 
+            FontSize="20" 
+        />
+
+        <!--Pasek menu-->
+        <Button 
+            Content="Home" 
+            Grid.Column="1" 
+            Margin="234,30,7,26" 
+        />
+        <Button 
+            Content="Projects" 
+            Grid.Column="1" 
+            Margin="331,30,275,26" 
+            Grid.ColumnSpan="3" 
+        />
+        <Button 
+            Content="Reports" 
+            Grid.Column="3" 
+            Margin="64,30,179,26" 
+        />
+        <Button 
+            Content="Settings" 
+            Grid.Column="3" 
+            Margin="158,30,85,26" 
+        />
+
+        <!--Pole wyboru projektu-->
+        <ComboBox 
+            x:Name="ProjectsComboBox" 
+            Margin="281,32,427,29" 
+            Grid.Column="3" 
+            Grid.ColumnSpan="3"
+        />
+
+        <!--Przyciski sterowania stoperem-->
+        <Button 
+            Content="Start" 
+            Grid.Column="5" 
+            Margin="103,34,308,22" 
+        />
+        <Button 
+            Content="Restart" 
+            Grid.Column="5" 
+            Margin="225,28,185,28" 
+        />
+
+        <!--Przycisk profilu-->
+        <Button 
+            Grid.Column="5" 
+            Margin="378,30,32,26">
+
+            <Button.Content>
+                <Image Source="/TEST_IMAGE.png" 
+                       Width="32" 
+                       Height="32" />
+            </Button.Content>
+        </Button>
+
+        <!--Zawartość okna-->
+        <ContentControl Content="{}" 
+                        Grid.Column="1" 
+                        Grid.Row="1" 
+                        Grid.ColumnSpan="5" 
+                        Grid.RowSpan="3"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"  
+        />
+
+
+    </Grid>
+</Window>

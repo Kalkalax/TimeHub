@@ -17,11 +17,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TEST_IMAGE.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="resources\images\TiCloud_eGp_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Realm" Version="20.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="TEST_IMAGE.png" />
   </ItemGroup>
 
   <ItemGroup>

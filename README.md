@@ -13,7 +13,7 @@ TiCloud is a desktop application for monitoring and managing time spent working 
 </p>
 
 ## News
-- 2024-12-??: First version of TiCloud
+- 2024-12-29: First version of TiCloud
 
 ## Features of TiCloud
 - Simple and intuitive to use 
@@ -35,7 +35,7 @@ They can be downloaded using Git Bash:
 ```bash
 git clone --branch release --single-branch https://github.com/Kalkalax/TiCloud
 ```
-If you are not interested in cloning the repository, just [download the latest app release (1.0.0)]().
+If you are not interested in cloning the repository, just [download the latest app release (1.0.0)](https://github.com/Kalkalax/TiCloud/archive/refs/heads/release.zip).
 
 Then follow the instructions below:
 
@@ -48,30 +48,33 @@ Then follow the instructions below:
 If you are interested in the source code or want to introduce your own implementation, use the instructions below.
 
 <details>
-  <summary>Read more</summary>
-  Each branch contains different content and, depending on your preferences, you can install applications in several ways:
+<summary>Read more</summary>
+<br>
 
-  - `release`<sup>1</sup> - contains an application installer that will guide you through the entire process
-  - `master` - contains a compiled version of the application ready to use (_without installer_)
-  - `develop` - includes the source code of the application along with the VS project and the necessary documentation
+Each branch contains different content and, depending on your preferences, you can install applications in several ways:
 
-  ### Acquiring a Git repository
-  The repository can be obtained in two ways
-  - Cloning a Git repository
+- `release`<sup>1</sup> - contains an application installer that will guide you through the entire process
+- `master` - contains a compiled version of the application ready to use (_without installer_)
+- `develop` - includes the source code of the application along with the VS project and the necessary documentation
 
-    - To download the entire repository, run Git Bash on the target location and call:
+### Acquiring a Git repository
+The repository can be obtained in two ways:
+- Cloning a Git repository:
+
+  - To download the entire repository, run Git Bash on the target location and call:
 
     ```bash
     git clone https://github.com/Kalkalax/TiCloud
     ```
 
-  - Downloading the archive `.ZIP`<sup>2</sup>
-    - [release]() 
-    - [master]()
-    - [develop]()
-    
- ><sup>1</sup> _recommended for users who only want to use the application's capabilities_<br>
- ><sup>2</sup> _each branch must be downloaded separately_
+- Downloading the archive `.ZIP`<sup>2</sup>:
+
+  - [release](https://github.com/Kalkalax/TiCloud/archive/refs/heads/release.zip) 
+  - [master](https://github.com/Kalkalax/TiCloud/archive/refs/heads/master.zip)
+  - [develop](https://github.com/Kalkalax/TiCloud/archive/refs/heads/develop.zip)
+
+><sup>1</sup> _recommended for users who only want to use the application's capabilities_<br>
+><sup>2</sup> _each branch must be downloaded separately_
 </details>
 
 
