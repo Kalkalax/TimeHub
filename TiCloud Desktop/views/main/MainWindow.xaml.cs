@@ -7,6 +7,7 @@ using System.Windows.Media.Imaging;
 using TiCloud.Core.Database;
 using TiCloud.Core.Database.Models;
 using TiCloud.Core.Timers;
+using TiCloud_Desktop.views.content;
 
 //TODO: Tu jest wszystko do zrobienia, wyczyścić kod, dopisać funkcje(minimalizowanie,usuwanie projektów), poprawić komentarze
 
@@ -29,6 +30,7 @@ namespace TiCloud
         public MainWindow()
         {
             InitializeComponent();
+            MainContent.Content = new HomeView();
 
             LoadProjects();
 
@@ -64,7 +66,7 @@ namespace TiCloud
 
             ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
             StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
-            DeleteProjectButton.IsEnabled = false;
+            //DeleteProjectButton.IsEnabled = false;
 
         }
 
@@ -127,8 +129,8 @@ namespace TiCloud
             {
                 ResetButton.IsEnabled = false;
                 ProjectsComboBox.IsEnabled = false;
-                AddProjectButton.IsEnabled = false;
-                DeleteProjectButton.IsEnabled = false;
+                //AddProjectButton.IsEnabled = false;
+                //DeleteProjectButton.IsEnabled = false;
 
                 _workTimeTracker.StartTracking();
                 StartStopButton.Content = "Stop";
@@ -176,8 +178,8 @@ namespace TiCloud
 
             //Odblokowujemy liste do zmiany 
             ProjectsComboBox.IsEnabled = true;
-            AddProjectButton.IsEnabled = true;
-            DeleteProjectButton.IsEnabled = true;
+            //AddProjectButton.IsEnabled = true;
+            //DeleteProjectButton.IsEnabled = true;
 
             UpdateListView();
 
@@ -187,7 +189,7 @@ namespace TiCloud
         {
             // Włącz lub wyłącz przycisk na podstawie wybranej wartości
             StartStopButton.IsEnabled = ProjectsComboBox.SelectedItem != null;
-            DeleteProjectButton.IsEnabled = true;
+            //DeleteProjectButton.IsEnabled = true;
             UpdateListView();
         }
 
@@ -203,7 +205,7 @@ namespace TiCloud
 
             if (projects.Count == 0)
             {
-                DeleteProjectButton.IsEnabled = false;
+                //DeleteProjectButton.IsEnabled = false;
                 ProjectsComboBox.IsEnabled = false;
             }
 
@@ -223,18 +225,18 @@ namespace TiCloud
                 if (selectedProject != null)
                 {
                     // Aktualizacja ListView z sesjami pracy
-                    DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
-                    {
-                        Date = WorkSession.SessionDate.ToString("d"),
-                        Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
-                    }).ToList();
+                    //DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
+                    //{
+                    //    Date = WorkSession.SessionDate.ToString("d"),
+                    //    Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
+                    //}).ToList();
 
                     UpdateTotalTimeDisplay(selectedProject.ProjectID);
                 }
             }
             else
             {
-                DataListView.ItemsSource = null;
+                //DataListView.ItemsSource = null;
             }
         }
 
@@ -317,14 +319,14 @@ namespace TiCloud
             if (projectId == null)
             {
                 // Jeśli brak projectId, wyczyść TextBlock lub ustaw domyślny tekst
-                TotalTimeTextBlock.Text = "Łączny czas: 00:00:00";
+                //TotalTimeTextBlock.Text = "Łączny czas: 00:00:00";
                 return;
             }
                 //obierz łączny czas z bazy danych
                 TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
 
                 // Zaktualizuj tekst w TextBlock
-                TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
+                //TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
             
         }
 

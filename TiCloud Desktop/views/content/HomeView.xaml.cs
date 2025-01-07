@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TiCloud_Desktop
+namespace TiCloud_Desktop.views.content
 {
     /// <summary>
-    /// Logika interakcji dla klasy BaseWindow.xaml
+    /// Logika interakcji dla klasy HomeView.xaml
     /// </summary>
-    public partial class BaseWindow : Window
+    public partial class HomeView : System.Windows.Controls.UserControl
     {
-        public BaseWindow()
+        public HomeView()
         {
             InitializeComponent();
         }

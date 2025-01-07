@@ -5,8 +5,6 @@ TiCloud/
 │
 ├── App.xaml                 // Główny plik konfiguracji aplikacji WPF
 ├── App.xaml.cs              // Kod-behind dla App.xaml
-├── MainWindow.xaml          // Główne okno aplikacji
-├── MainWindow.xaml.cs       // Kod-behind dla MainWindow.xaml
 ├── NameInputWindow.xaml
 ├── NameInputWindow.xaml.cs
 ├── AppInitializer.cs 
@@ -30,7 +28,20 @@ TiCloud/
 │       └── WorkTimeTracker.cs       // Główna logika śledzenia czasu pracy    
 │
 └── resources/
-    └── Images/
-        └── Icon.png                 // Ikona aplikacji
+│   └── Images/
+│       └── Icon.png                 // Ikona aplikacji
+│
+├── views/  
+│   ├── main/
+│   │	├── MainWindow.xaml          // Główne okno aplikacji
+│   │	├── MainWindow.xaml.cs       // Kod-behind dla MainWindow.xaml	
+│   │
+│   └── content/
+│  		├── HomeView.xaml
+│		├── HomeView.xaml.cs
+│   
+└── viewmodels/ 
+	├── MainWindowViewModel.cs
+	├── HomeViewModel.cs
 
 ```
