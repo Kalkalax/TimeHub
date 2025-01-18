@@ -339,16 +339,6 @@ namespace TiCloud
         {
 
         }
-
-        private void MenuBar_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuBar_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
     

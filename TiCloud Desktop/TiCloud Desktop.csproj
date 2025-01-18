@@ -17,11 +17,58 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="core\FolderStructure.md" />
+    <Compile Remove="views\main\1.cs" />
+    <Compile Remove="views\main\2.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="resources\images\TiCloud_eGp_icon.ico" />
+    <None Remove="core\FolderStructure.md" />
+    <None Remove="resources\images\admin-alt.png" />
+    <None Remove="resources\images\pause_blank.png" />
+    <None Remove="resources\images\pause_full.png" />
+    <None Remove="resources\images\play_full.png" />
+    <None Remove="resources\images\stop_blank.png" />
+    <None Remove="resources\images\stop_full.png" />
+    <None Remove="resources\images\TEST_IMAGE.png" />
+    <None Remove="resources\images\user-gear_full.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="views\main\1.xaml" />
+    <Page Remove="views\main\2.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="resources\images\admin-alt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\pause_blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\pause_full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\play_blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\play_full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\stop_blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\stop_full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\TEST_IMAGE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\TiCloud_eGp_icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\user-gear_full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
