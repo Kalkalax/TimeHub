@@ -12,15 +12,29 @@
         <!--\Tło paska menu-->
         <Border 
             
-         
+            Height="649"
+            Width="63"
             CornerRadius="31" 
-            Background="#FF0D0D0D" RenderTransformOrigin="0,0" 
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
+            Background="#FF0D0D0D" 
+  
         />
 
+        <Border 
+            Width="41"
+            Height="41"
+            CornerRadius="22" 
+            Background="#FFF2541B" 
+            Margin="11,11,11,597" 
+        />
+
+        <Button 
+            Style="{DynamicResource MenuButton.xaml}" 
+            Margin="11,82,13,528" >
+            <Image Source="/resources/images/home_icon.png" 
+                   Height="24" Width="24"/>
+        </Button>
 
     </Grid>
-    
-    
+
+
 </UserControl>

@@ -6,10 +6,14 @@
         xmlns:custom="clr-namespace:TiCloud_Desktop.views.controls"
         mc:Ignorable="d"
         Title="BaseWindow" 
-         
-        
         WindowStartupLocation="CenterScreen" 
-        Background="#FFF8F8F8" HorizontalAlignment="Center" VerticalAlignment="Center">
+        Background="#FFF8F8F8"
+        Loaded="Window_Loaded"
+        Width="900" Height="690" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+        
+        
+        
+
 
 
 
@@ -17,12 +21,12 @@
     <Grid>
         <!--Podział widoku na wiersze-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="13"/>
-            <RowDefinition Height="7"/>
-            <RowDefinition Height="31"/>
-            <RowDefinition Height="31"/>
-            <RowDefinition Height="580"/>
-            <RowDefinition Height="13"/>
+            <RowDefinition Height="13" MaxHeight="13"/>
+            <RowDefinition Height="7" MaxHeight="7"/>
+            <RowDefinition Height="31" MaxHeight="31"/>
+            <RowDefinition Height="31" MaxHeight="31"/>
+            <RowDefinition Height="580" MaxHeight="580"/>
+            <RowDefinition Height="13" MaxHeight="13"/>
         </Grid.RowDefinitions>
 
         <!--Podział widoku na kolumny-->
@@ -50,8 +54,8 @@
 
 
 
-        <!--Pole wyboru projektu-->
-        <!--
+        
+        
         <ComboBox 
         x:Name="ProjectsComboBox" 
         DisplayMemberPath="ProjectName"
@@ -59,13 +63,13 @@
         SelectionChanged="ProjectsComboBox_SelectionChanged" 
         Margin="86,256,86,143" 
         Grid.Column="5" Grid.Row="4" 
-    />
+         />
 
 
 
-        -->
-        <!--Przycisk profilu-->
-        <!--
+        
+        
+        
         <Button 
     
         Style="{DynamicResource CircleButton.xaml}" 
@@ -77,9 +81,9 @@
 
         </Button>
 
-        -->
-        <!-- Dodajemy etykiete czasu -->
-        <!--
+        
+          
+        
         <Label x:Name="TimeLabel" 
        Content="00:00:00" 
        HorizontalAlignment="Left" 
@@ -89,9 +93,9 @@
        
     />
 
-        -->
-        <!--Zawartość okna-->
-        <!--
+        
+        
+        
         <ContentControl 
         x:Name="MainContent"
         Content="{Binding CurrentView}"
@@ -100,9 +104,9 @@
     />
 
 
-        -->
-        <!--Przyciski sterowania stoperem-->
-        <!--
+        
+        
+        
         <Button 
         Style="{DynamicResource CircleButton.xaml}" 
         x:Name="StartStopButton" 
@@ -128,12 +132,15 @@
 
 
 
-        -->
+        
+        
         <!--Boczny pasek menu-->
         <custom:MenuBar 
             Grid.Column="1"
             Grid.Row="1"
-            Grid.RowSpan="4"  
+            Grid.RowSpan="4" 
+            Margin="0,0,0,0"  
+            
         />
 
 

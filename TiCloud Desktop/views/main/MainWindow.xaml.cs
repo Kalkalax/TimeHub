@@ -31,7 +31,7 @@ namespace TiCloud
         {
             InitializeComponent();
             MainContent.Content = new HomeView();
-
+            
             LoadProjects();
 
             // Ustawienie ikony z zasobu osadzonego
@@ -60,7 +60,7 @@ namespace TiCloud
 
             // Obsługa zdarzenia kliknięcia w ikonę
             _notifyIcon.Click += NotifyIcon_Click;
-        
+            
 
 
 
@@ -69,6 +69,30 @@ namespace TiCloud
             //DeleteProjectButton.IsEnabled = false;
 
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Wymiary docelowego obszaru wyświetlania
+            double targetWidth = 900;
+            double targetHeight = 714;
+
+            // Ustawienie wstępnych wartości
+            this.Width = targetWidth;
+            this.Height = targetHeight;
+
+            // Pomiar okna
+            this.Measure(new System.Windows.Size(Double.PositiveInfinity, Double.PositiveInfinity));
+            this.Arrange(new Rect(0, 0, this.DesiredSize.Width, this.DesiredSize.Height));
+
+            // Oblicz różnicę między całkowitym rozmiarem okna a obszarem wyświetlania
+            double widthDifference = this.ActualWidth - this.RenderSize.Width;
+            double heightDifference = this.ActualHeight - this.RenderSize.Height;
+
+            // Dostosuj wymiary okna
+            this.Width = targetWidth + widthDifference;
+            this.Height = targetHeight + heightDifference;
+        }
+
 
         private void NotifyIcon_Click(object? sender, EventArgs e)
         {

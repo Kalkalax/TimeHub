@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="core\FolderStructure.md" />
     <None Remove="resources\images\admin-alt.png" />
+    <None Remove="resources\images\home_icon.png" />
     <None Remove="resources\images\pause_blank.png" />
     <None Remove="resources\images\pause_full.png" />
     <None Remove="resources\images\play_full.png" />
@@ -40,6 +41,9 @@
 
   <ItemGroup>
     <Content Include="resources\images\admin-alt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\home_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\images\pause_blank.png">
@@ -79,6 +83,12 @@
     <None Update="resources\images\TiCloud_eGp_icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="styles\MenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>
