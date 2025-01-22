@@ -193,9 +193,6 @@ namespace TiCloud
             UpdateListView();
         }
 
-
-
-
         private void LoadProjects()
         {
             // Pobierz listę projektów z bazy danych
@@ -212,6 +209,7 @@ namespace TiCloud
             // Ustaw źródło danych dla ComboBox
             ProjectsComboBox.ItemsSource = projects;
         }
+
 
         private void UpdateListView()
         {

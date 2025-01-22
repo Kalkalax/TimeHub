@@ -8,44 +8,42 @@
              d:DesignHeight="31" Width="280">
     <Grid>
 
-
-
         <Button 
-            x:Name="Reload_Timmer_Button" 
-            Click="Reload_Timmer_Button_Click"
+            x:Name="ReloadTimmerButton" 
+            Click="ReloadTimmer_Button_Click"
             Style="{DynamicResource TimerButton.xaml}"
             Width="31"
             Height="31"
-            HorizontalAlignment="Right" Margin="0,0,0,0">
+            HorizontalAlignment="Right" Margin="0,0,0,0"
+            IsEnabled="False">
             <Button.Content>
-                <svg:SvgViewbox Source="/resources/images/reload_icon.svg" Width="19" Height="19" />
+                <svg:SvgViewbox Source="/resources/images/reload_icon.svg" Width="19" Height="19" Opacity="0.6" />
             </Button.Content>
         </Button>
 
-
-
-
         <Button 
-            x:Name="StartStop_Timmer_Button" 
-            Click="StartStop_Timmer_Button_Click"
+            x:Name="StartStopTimmer_Button" 
+            Click="StartStopTimmer_Button_Click"
             Style="{DynamicResource TimerButton.xaml}"
             Width="31"
             Height="31"
-            HorizontalAlignment="Right" Margin="0,0,40,0">
+            HorizontalAlignment="Right" Margin="0,0,40,0"
+            IsEnabled="False">
             <Button.Content>
-                <svg:SvgViewbox Source="/resources/images/play_icon.svg" Width="17" Height="17" />
+                <svg:SvgViewbox Source="/resources/images/play_icon.svg" Width="17" Height="17" Opacity="0.6" />
             </Button.Content>
         </Button>
 
         <ComboBox 
-            
-            
+            x:Name="ProjectsList_ComboBox" 
+            DisplayMemberPath="ProjectName"
+            SelectedValuePath="ProjectID"
+            SelectionChanged="ProjectsList_ComboBox_SelectionChanged" 
             Width="200" 
             Height="31"
             HorizontalAlignment="Right" Margin="0,0,80,0"
         />
-
-
-
+        
     </Grid>
+    
 </UserControl>

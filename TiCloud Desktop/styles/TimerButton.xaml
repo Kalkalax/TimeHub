@@ -8,7 +8,7 @@
                 <ControlTemplate>
                     <Rectangle Margin="0,0,0,0" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1" Width="60" Height="60" />
                 </ControlTemplate>
-            </Setter.Value>
+            </Setter.Value> 
         </Setter>
     </Style>
     <SolidColorBrush x:Key="Button.Static.Background" Color="#FFF2F2F2"/> <!-- Kolor tła -->
