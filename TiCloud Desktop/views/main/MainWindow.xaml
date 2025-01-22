@@ -72,7 +72,7 @@
         
         <Button 
     
-        Style="{DynamicResource CircleButton.xaml}" 
+        
         Grid.Column="5" 
         Margin="59,122,261,277" Click="Button_Click" RenderTransformOrigin="0.517,0.501" Grid.Row="4">
             <Button.Content>
@@ -108,9 +108,9 @@
         
         
         <Button 
-        Style="{DynamicResource CircleButton.xaml}" 
         x:Name="StartStopButton" 
         Click="StartStopButton_Click" 
+        
         Grid.Column="5" 
         Margin="119,122,201,277" MaxWidth="60" MaxHeight="60" Grid.Row="4">
             <Image Source="/resources/images/play_blank.png" Height="22" Width="22"></Image>
@@ -121,7 +121,7 @@
 
 
         <Button 
-        Style="{DynamicResource CircleButton.xaml}" 
+        
         x:Name="ResetButton" 
     
         Click="ResetButton_Click" 
@@ -141,6 +141,14 @@
             Grid.RowSpan="4" 
             Margin="0,0,0,0"  
             
+        />
+
+        <!--Gorny pasek timera-->
+        <custom:TimerBar
+            Grid.Row="2"
+            Grid.Column="3"
+            Grid.ColumnSpan="3" 
+            HorizontalAlignment="Right"
         />
 
 

@@ -11,28 +11,32 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFF4F5F7"/> <!-- Kolor tła -->
-    <SolidColorBrush x:Key="Button.Static.Border" Color="#FFE3E7EA"/> <!-- Kolor obramowania -->
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFC1C3C8"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF9CA0A3"/>
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC1C3C8"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF9CA0A3"/>
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#dbdcde"/> <!-- Kolor tła (zablokowanego) -->
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#cccfd2"/> <!-- Kolor obramowania (zablokowanego) -->
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF9CA0A3"/> <!-- Kolor tekstu -->
-    <Style x:Key="CircleButton.xaml" TargetType="{x:Type Button}">
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFF2F2F2"/> <!-- Kolor tła -->
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FFF2F2F2"/> <!-- Kolor obramowania -->
+
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFF2F2F2"/> <!-- Kolor tła (po najechaniu mysza)-->
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#7F343435"/> <!-- Kolor obramowania (po najechaniu mysza)-->
+
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFF2F2F2"/> <!-- Kolor tła (po naciśnięciu)-->
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF343435"/> <!-- Kolor obramowania (po naciśnięciu)-->
+
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF2F2F2"/> <!-- Kolor tła (zablokowanego) -->
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFF2F2F2"/> <!-- Kolor obramowania (zablokowanego) -->
+
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FFF2F2F2"/> <!-- Kolor tekstu -->
+    <Style x:Key="TimerButton.xaml" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="BorderThickness" Value="2"/> <!-- Grubość obramowania -->
+        <Setter Property="BorderThickness" Value="1"/> <!-- Grubość obramowania -->
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="25,25,25,25" Width="41" Height="41" Margin="-9,0,0,0">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="25,25,25,25" Width="31" Height="31" Margin="0,0,0,0">
                         <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
