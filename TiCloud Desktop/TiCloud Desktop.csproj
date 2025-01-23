@@ -48,6 +48,9 @@
     <Content Include="resources\images\reload_icon.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="resources\images\pause_icon.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\images\TEST_IMAGE.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

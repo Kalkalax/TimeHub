@@ -32,21 +32,21 @@ namespace TiCloud
             InitializeComponent();
             MainContent.Content = new HomeView();
             
-            LoadProjects();
+            //LoadProjects();
 
             // Ustawienie ikony z zasobu osadzonego
             Icon icon = new Icon(IconManager.TiCloudIconPath);
             this.Icon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
 
             // Tworzymy obiekt WorkTimeTracker
-            _workTimeTracker = new WorkTimeTracker();
+            //_workTimeTracker = new WorkTimeTracker();
 
             // Inicjalizacja timer'a do aktualizacji czasu 
-            _refreshTimer = new RefreshTimer(_workTimeTracker, UpdateTimeDisplay);
-            _refreshTimer.Start();
+            //_refreshTimer = new RefreshTimer(_workTimeTracker, UpdateTimeDisplay);
+            //_refreshTimer.Start();
 
             //_WorkPeriods = new RealmList<WorkPeriod>();
-            _WorkPeriods = [];
+            //_WorkPeriods = [];
 
             // Inicjalizacja ikony zasobnika
             _notifyIcon = new NotifyIcon
@@ -64,8 +64,8 @@ namespace TiCloud
 
 
 
-            ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
-            StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
+            //ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
+            //StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
             //DeleteProjectButton.IsEnabled = false;
 
         }
@@ -102,24 +102,24 @@ namespace TiCloud
         }
 
         // Obsługa zamykania okna
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            base.OnClosing(e);
+        //protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        //{
+        //    base.OnClosing(e);
 
-            // Chowamy aplikację do zasobnika tylko, jeśli czas jest mierzony
-            if (_workTimeTracker.IsTracking)
-            {
-                e.Cancel = true;
-                Hide();
-                _notifyIcon.Visible = true;
-            }
-            else
-            {
-                _notifyIcon.Visible = false;
-                _notifyIcon.Dispose();
-                System.Windows.Application.Current.Shutdown();
-            }
-        }
+        //    // Chowamy aplikację do zasobnika tylko, jeśli czas jest mierzony
+        //    if (_workTimeTracker.IsTracking)
+        //    {
+        //        e.Cancel = true;
+        //        Hide();
+        //        _notifyIcon.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        _notifyIcon.Visible = false;
+        //        _notifyIcon.Dispose();
+        //        System.Windows.Application.Current.Shutdown();
+        //    }
+        //}
 
         // Metoda, która będzie wywoływana przez RefreshTimer do zaktualizowania UI
         private void UpdateTimeDisplay(TimeSpan totalWorkTime)
@@ -181,12 +181,12 @@ namespace TiCloud
                 //Wyświetlamy dane o sesji
                 Debug.WriteLine("Current Work Periods:");
 
-                foreach (var workPeriod in _WorkPeriods)
-                {
-                    Debug.WriteLine($"Start = {new DateTime(workPeriod.PeriodStartTime):yyyy-MM-dd HH:mm:ss.fff}");
-                    Debug.WriteLine($"End = {new DateTime(workPeriod.PeriodEndTime):yyyy-MM-dd HH:mm:ss.fff}");
-                    Debug.WriteLine($"Total Time = {new DateTime(workPeriod.PeriodTime):HH:mm:ss.fff}");
-                }
+                //foreach (var workPeriod in _WorkPeriods)
+                //{
+                //    Debug.WriteLine($"Start = {new DateTime(workPeriod.PeriodStartTime):yyyy-MM-dd HH:mm:ss.fff}");
+                //    Debug.WriteLine($"End = {new DateTime(workPeriod.PeriodEndTime):yyyy-MM-dd HH:mm:ss.fff}");
+                //    Debug.WriteLine($"Total Time = {new DateTime(workPeriod.PeriodTime):HH:mm:ss.fff}");
+                //}
 
                 var selectedProject = ProjectsComboBox.SelectedItem as Project;
                 DatabaseManager.SaveWorkSession(selectedProject.ProjectID, _WorkPeriods);

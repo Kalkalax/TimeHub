@@ -9,7 +9,7 @@
     <Grid>
 
         <Button 
-            x:Name="ReloadTimmerButton" 
+            x:Name="ReloadTimmer_Button" 
             Click="ReloadTimmer_Button_Click"
             Style="{DynamicResource TimerButton.xaml}"
             Width="31"
@@ -34,6 +34,17 @@
             </Button.Content>
         </Button>
 
+        <Label 
+            x:Name="TimeDisplay" 
+            Content="00:00:00" 
+            HorizontalAlignment="Right" 
+            FontSize="19"
+            Width="80" 
+            Height="31" 
+            Margin="0,0,120,0" 
+   
+        />
+
         <ComboBox 
             x:Name="ProjectsList_ComboBox" 
             DisplayMemberPath="ProjectName"
@@ -43,7 +54,7 @@
             Height="31"
             HorizontalAlignment="Right" Margin="0,0,80,0"
         />
-        
+
     </Grid>
-    
+
 </UserControl>

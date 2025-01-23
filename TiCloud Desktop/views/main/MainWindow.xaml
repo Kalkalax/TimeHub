@@ -75,9 +75,7 @@
         
         Grid.Column="5" 
         Margin="59,122,261,277" Click="Button_Click" RenderTransformOrigin="0.517,0.501" Grid.Row="4">
-            <Button.Content>
-                <Image Source="/resources/images/admin-alt.png" Width="24" Height="24" Margin="7,0,0,0" />
-            </Button.Content>
+           
 
         </Button>
 
@@ -113,7 +111,7 @@
         
         Grid.Column="5" 
         Margin="119,122,201,277" MaxWidth="60" MaxHeight="60" Grid.Row="4">
-            <Image Source="/resources/images/play_blank.png" Height="22" Width="22"></Image>
+            
         </Button>
 
 
@@ -127,7 +125,7 @@
         Click="ResetButton_Click" 
         Grid.Column="5" 
         Margin="190,122,130,277" MaxWidth="60" MaxHeight="60" RenderTransformOrigin="0.483,0.551" Grid.Row="4" >
-            <Image Source="/resources/images/stop_blank.png" Height="21" Width="21"></Image>
+           
         </Button>
 
 
