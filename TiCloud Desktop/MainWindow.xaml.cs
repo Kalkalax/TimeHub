@@ -323,9 +323,10 @@ namespace TiCloud
                 //obierz łączny czas z bazy danych
                 TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
 
-                // Zaktualizuj tekst w TextBlock
-                TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
-            
+            // Zaktualizuj tekst w TextBlock
+            TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {(int)totalTime.TotalHours}:{totalTime:mm\\:ss}";
+
+
         }
 
         private void DataListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

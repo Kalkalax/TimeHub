@@ -42,7 +42,7 @@ namespace TiCloud.Core.Database
         }
 
         /// <summary>
-        /// Inicjalizuje bazę danych Realm, zapisuje konfigurację w pamięci oraz
+        /// Inicjalizuje bazę danych Realm, zapisuje konfigurację w pamięci orazm
         /// tworzy instancję bazy danych, jeśli nie została wcześniej utworzona.
         /// W przypadku migracji schematu bazy danych (z wersji < 2) dodaje kolumnę
         /// <see cref="Project.ProjectCreateDate"/> z domyślną wartością (data utworzenia projektu).
