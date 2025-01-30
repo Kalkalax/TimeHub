@@ -1042,7 +1042,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TiCloud Desktop"
-        "ProductCode" = "8:{305B43D6-FD7E-45AA-B62B-87E9CA8088CB}"
+        "ProductCode" = "8:{305B43D6-FD7E-45AA-B62B-77E9CA8088CB}"
         "PackageCode" = "8:{0B50D0BB-2F0C-459D-8EFE-909445CBAA95}"
         "UpgradeCode" = "8:{67C06D83-E88A-42B6-8D11-F2F87085737E}"
         "AspNetVersion" = "8:"
