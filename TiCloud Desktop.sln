@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{57DBB89C-B7DE-46C7-875F-948AA6D350E6}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		UML.png = UML.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiCloud Desktop", "TiCloud Desktop\TiCloud Desktop.csproj", "{B0EB773C-EE4F-435C-96CE-2E39AF193614}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TiCloudSetup", "TiCloudSetup\TiCloudSetup.vdproj", "{F7AC3068-9B46-4528-BE72-41E8800B5EB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0EB773C-EE4F-435C-96CE-2E39AF193614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0EB773C-EE4F-435C-96CE-2E39AF193614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0EB773C-EE4F-435C-96CE-2E39AF193614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0EB773C-EE4F-435C-96CE-2E39AF193614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7AC3068-9B46-4528-BE72-41E8800B5EB3}.Debug|Any CPU.ActiveCfg = Debug
+		{F7AC3068-9B46-4528-BE72-41E8800B5EB3}.Release|Any CPU.ActiveCfg = Release
+		{F7AC3068-9B46-4528-BE72-41E8800B5EB3}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
