@@ -134,5 +134,6 @@ project.nuget.cache
 # Build outputs (opcjonalnie, jeśli jeszcze tego nie ma)
 bin/
 obj/
-
+TiCloudSetup/
+TiCloud Desktop/
 /.vs
