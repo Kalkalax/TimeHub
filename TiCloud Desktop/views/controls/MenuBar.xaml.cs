@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TiCloud;
+using TiCloud_Desktop.viewmodels;
 
 
 namespace TiCloud_Desktop.views.controls
@@ -24,6 +26,7 @@ namespace TiCloud_Desktop.views.controls
         public MenuBar()
         {
             InitializeComponent();
+           // DataContext = new MainWindowViewModel();
         }
     }
 }

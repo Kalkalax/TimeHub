@@ -33,7 +33,6 @@ namespace TiCloud_Desktop.views.controls
             _refreshTimer.Start();
 
             //Tworzymy liste WorkPeriod'ów
-            //_WorkPeriods = new RealmList<WorkPeriod>();
             _WorkPeriods = [];
 
         }

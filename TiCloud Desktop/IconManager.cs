@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace TiCloud
+namespace TiCloud_Desktop
 {
     /// <summary>
     /// Klasa odpowiedzialna za zarządzanie ikoną aplikacji w zasobniku systemowym (tray) oraz jej interakcjami.
@@ -27,7 +27,7 @@ namespace TiCloud
         {
             _notifyIcon = new NotifyIcon
             {
-                Icon = new System.Drawing.Icon(TiCloudIconPath),
+                Icon = new Icon(TiCloudIconPath),
                 Visible = true,
                 Text = "TiCloud - Kliknij, aby przywrócić"
             };

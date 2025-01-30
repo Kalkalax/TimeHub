@@ -11,7 +11,8 @@
                 
                 <ResourceDictionary Source="styles/MenuButton.xaml" />
                 <ResourceDictionary Source="styles/TimerButton.xaml" />
-
+                
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

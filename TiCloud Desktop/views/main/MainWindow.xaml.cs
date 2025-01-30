@@ -7,11 +7,12 @@ using System.Windows.Media.Imaging;
 using TiCloud.Core.Database;
 using TiCloud.Core.Database.Models;
 using TiCloud.Core.Timers;
+using TiCloud_Desktop.viewmodels;
 using TiCloud_Desktop.views.content;
 
 //TODO: Tu jest wszystko do zrobienia, wyczyścić kod, dopisać funkcje(minimalizowanie,usuwanie projektów), poprawić komentarze
 
-namespace TiCloud
+namespace TiCloud_Desktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -30,23 +31,12 @@ namespace TiCloud
         public MainWindow()
         {
             InitializeComponent();
-            MainContent.Content = new HomeView();
             
-            //LoadProjects();
+            DataContext = new MainWindowViewModel();
 
             // Ustawienie ikony z zasobu osadzonego
             Icon icon = new Icon(IconManager.TiCloudIconPath);
             this.Icon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-
-            // Tworzymy obiekt WorkTimeTracker
-            //_workTimeTracker = new WorkTimeTracker();
-
-            // Inicjalizacja timer'a do aktualizacji czasu 
-            //_refreshTimer = new RefreshTimer(_workTimeTracker, UpdateTimeDisplay);
-            //_refreshTimer.Start();
-
-            //_WorkPeriods = new RealmList<WorkPeriod>();
-            //_WorkPeriods = [];
 
             // Inicjalizacja ikony zasobnika
             _notifyIcon = new NotifyIcon
@@ -60,20 +50,14 @@ namespace TiCloud
 
             // Obsługa zdarzenia kliknięcia w ikonę
             _notifyIcon.Click += NotifyIcon_Click;
-            
-
-
-
-            //ResetButton.IsEnabled = false; // Zablokowanie przycisku resetu na początku
-            //StartStopButton.IsEnabled = false; // Zablokowanie przycisku startu na początku
-            //DeleteProjectButton.IsEnabled = false;
+           
 
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Wymiary docelowego obszaru wyświetlania
-            double targetWidth = 900;
+            double targetWidth = 916;
             double targetHeight = 714;
 
             // Ustawienie wstępnych wartości
@@ -122,257 +106,130 @@ namespace TiCloud
         //}
 
         // Metoda, która będzie wywoływana przez RefreshTimer do zaktualizowania UI
-        private void UpdateTimeDisplay(TimeSpan totalWorkTime)
-        {
-            TimeLabel.Content = totalWorkTime.ToString(@"hh\:mm\:ss");
-        }
 
 
-        private void StartStopButton_Click(object sender, RoutedEventArgs e)
-        {
-            // jeśli działa
-            if (_workTimeTracker.IsTracking)
-            {
-                ResetButton.IsEnabled = true;
-                _workTimeTracker.StopTracking();
-                StartStopButton.Content = "Start";
-                Debug.WriteLine("Czas stop");
+
+
+
+
+        //private void UpdateListView()
+        //{
+        //    if (ProjectsComboBox.SelectedItem is Project selectedProject)
+        //    {
+        //        Debug.WriteLine($"{selectedProject.ProjectID}");
+
+        //        // Pobranie wybranego projektu
+        //        selectedProject = DatabaseManager.GetProjectById(selectedProject.ProjectID);
+
+        //        if (selectedProject != null)
+        //        {
+        //            // Aktualizacja ListView z sesjami pracy
+        //            //DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
+        //            //{
+        //            //    Date = WorkSession.SessionDate.ToString("d"),
+        //            //    Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
+        //            //}).ToList();
+
+        //            UpdateTotalTimeDisplay(selectedProject.ProjectID);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //DataListView.ItemsSource = null;
+        //    }
+        //}
+
+        //private void AddProjectButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // Tworzymy instancję okna
+        //    NameInputWindow nameInputWindow = new();
+
+        //    // Wywołujemy okno i sprawdzamy, czy użytkownik kliknął "OK"
+        //    if (nameInputWindow.ShowDialog() == true)
+        //    {
+        //        // Pobieramy wprowadzone dane (nazwę)
+        //        string enteredName = nameInputWindow.EnteredName;
+        //        Debug.WriteLine($"Wprowadzona nazwa: {enteredName}");
+        //        DatabaseManager.AddProject(enteredName);
                 
                 
-                // Jeśli _currentWorkPeriod nie jest null, aktualizujemy sesję
-                if (_currentWorkPeriod != null)
-                {
-                    _currentWorkPeriod.PeriodEndTime = DateTime.Now.Ticks / 10000;
-                    _currentWorkPeriod.CalculatePeriodTime();
-                    _WorkPeriods.Add(_currentWorkPeriod);
-                }
-               
-            }
-            // jeśli jeszcze nie działa
-            else
-            {
-                ResetButton.IsEnabled = false;
-                ProjectsComboBox.IsEnabled = false;
-                //AddProjectButton.IsEnabled = false;
-                //DeleteProjectButton.IsEnabled = false;
+        //        LoadProjects();
 
-                _workTimeTracker.StartTracking();
-                StartStopButton.Content = "Stop";
-                Debug.WriteLine("Czas start");
+        //        ProjectsComboBox.IsEnabled = true;
 
-                //Tworzymy nową sesje
-                _currentWorkPeriod = new WorkPeriod
-                {
-                    PeriodStartTime = DateTime.Now.Ticks / 10000
-                };
+        //        var newProject = DatabaseManager.GetAllProjects().FirstOrDefault(p => p.ProjectName == enteredName);
 
-            }
+        //        // Ustaw nowo dodany projekt jako wybrany w ComboBox
+        //        if (newProject != null)
+        //        {
+        //            ProjectsComboBox.SelectedItem = newProject;
+        //        }
+        //    }
+        //}
 
-        }
+        //private void DeleteProjectButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // Sprawdzenie, czy projekt został wybrany
+        //    if (ProjectsComboBox.SelectedItem is not Project selectedProject)
+        //    {
+        //        System.Windows.MessageBox.Show("Wybierz projekt, który chcesz usunąć.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        return; // Przerwij, jeśli projekt nie jest wybrany
+        //    }
 
-        // Metoda, która obsługuje naciśnięcie przycisku resetu (zakończenia sesji)
-        private void ResetButton_Click(Object sender, RoutedEventArgs e)
-        {
-            if (!_workTimeTracker.IsTracking)
-            {
-                Debug.WriteLine($"Reset, czas: {_workTimeTracker.TotalWorkTime}");
-                _workTimeTracker.ResetTracking();
+        //    // Potwierdzenie przed usunięciem
+        //    var confirmation = System.Windows.MessageBox.Show(
+        //        $"Czy na pewno chcesz usunąć projekt: {selectedProject.ProjectName}?",
+        //        "Potwierdzenie usunięcia",
+        //        MessageBoxButton.YesNo,
+        //        MessageBoxImage.Question
+        //    );
 
-                //Wyświetlamy dane o sesji
-                Debug.WriteLine("Current Work Periods:");
+        //    if (confirmation == MessageBoxResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            // Usunięcie projektu
 
-                //foreach (var workPeriod in _WorkPeriods)
-                //{
-                //    Debug.WriteLine($"Start = {new DateTime(workPeriod.PeriodStartTime):yyyy-MM-dd HH:mm:ss.fff}");
-                //    Debug.WriteLine($"End = {new DateTime(workPeriod.PeriodEndTime):yyyy-MM-dd HH:mm:ss.fff}");
-                //    Debug.WriteLine($"Total Time = {new DateTime(workPeriod.PeriodTime):HH:mm:ss.fff}");
-                //}
+        //            Debug.WriteLine($"Projekt do usunięcia: {selectedProject.ProjectID}");
 
-                var selectedProject = ProjectsComboBox.SelectedItem as Project;
-                DatabaseManager.SaveWorkSession(selectedProject.ProjectID, _WorkPeriods);
+        //            DatabaseManager.DeleteProject(selectedProject.ProjectID);
 
-          
-            }
-
-            // Czyścimy liste 
-            _WorkPeriods.Clear();
-
-            //Blokujemy przycisk do momentu nowej sesji
-            ResetButton.IsEnabled = false;
-
-            //Odblokowujemy liste do zmiany 
-            ProjectsComboBox.IsEnabled = true;
-            //AddProjectButton.IsEnabled = true;
-            //DeleteProjectButton.IsEnabled = true;
-
-            UpdateListView();
-
-        }
-
-        private void ProjectsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Włącz lub wyłącz przycisk na podstawie wybranej wartości
-            StartStopButton.IsEnabled = ProjectsComboBox.SelectedItem != null;
-            //DeleteProjectButton.IsEnabled = true;
-            UpdateListView();
-        }
-
-
-
-
-        private void LoadProjects()
-        {
-            // Pobierz listę projektów z bazy danych
-            //List<Project> projects = _realm.All<Project>().ToList();
-
-            List<Project> projects = [.. DatabaseManager.GetAllProjects()];
-
-            if (projects.Count == 0)
-            {
-                //DeleteProjectButton.IsEnabled = false;
-                ProjectsComboBox.IsEnabled = false;
-            }
-
-            // Ustaw źródło danych dla ComboBox
-            ProjectsComboBox.ItemsSource = projects;
-        }
-
-        private void UpdateListView()
-        {
-            if (ProjectsComboBox.SelectedItem is Project selectedProject)
-            {
-                Debug.WriteLine($"{selectedProject.ProjectID}");
-
-                // Pobranie wybranego projektu
-                selectedProject = DatabaseManager.GetProjectById(selectedProject.ProjectID);
-
-                if (selectedProject != null)
-                {
-                    // Aktualizacja ListView z sesjami pracy
-                    //DataListView.ItemsSource = selectedProject.ProjectWorkSessions.Select(WorkSession => new
-                    //{
-                    //    Date = WorkSession.SessionDate.ToString("d"),
-                    //    Time = TimeSpan.FromMilliseconds(WorkSession.SessionTime).ToString(@"h\:mm\:ss")
-                    //}).ToList();
-
-                    UpdateTotalTimeDisplay(selectedProject.ProjectID);
-                }
-            }
-            else
-            {
-                //DataListView.ItemsSource = null;
-            }
-        }
-
-        private void AddProjectButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Tworzymy instancję okna
-            NameInputWindow nameInputWindow = new();
-
-            // Wywołujemy okno i sprawdzamy, czy użytkownik kliknął "OK"
-            if (nameInputWindow.ShowDialog() == true)
-            {
-                // Pobieramy wprowadzone dane (nazwę)
-                string enteredName = nameInputWindow.EnteredName;
-                Debug.WriteLine($"Wprowadzona nazwa: {enteredName}");
-                DatabaseManager.AddProject(enteredName);
-                
-                
-                LoadProjects();
-
-                ProjectsComboBox.IsEnabled = true;
-
-                var newProject = DatabaseManager.GetAllProjects().FirstOrDefault(p => p.ProjectName == enteredName);
-
-                // Ustaw nowo dodany projekt jako wybrany w ComboBox
-                if (newProject != null)
-                {
-                    ProjectsComboBox.SelectedItem = newProject;
-                }
-            }
-        }
-
-        private void DeleteProjectButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Sprawdzenie, czy projekt został wybrany
-            if (ProjectsComboBox.SelectedItem is not Project selectedProject)
-            {
-                System.Windows.MessageBox.Show("Wybierz projekt, który chcesz usunąć.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-                return; // Przerwij, jeśli projekt nie jest wybrany
-            }
-
-            // Potwierdzenie przed usunięciem
-            var confirmation = System.Windows.MessageBox.Show(
-                $"Czy na pewno chcesz usunąć projekt: {selectedProject.ProjectName}?",
-                "Potwierdzenie usunięcia",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-            );
-
-            if (confirmation == MessageBoxResult.Yes)
-            {
-                try
-                {
-                    // Usunięcie projektu
-
-                    Debug.WriteLine($"Projekt do usunięcia: {selectedProject.ProjectID}");
-
-                    DatabaseManager.DeleteProject(selectedProject.ProjectID);
-
-                    ProjectsComboBox.SelectedItem = null;
+        //            ProjectsComboBox.SelectedItem = null;
                     
 
-                    // Załaduj ponownie projekty po usunięciu
-                    LoadProjects();
-                    UpdateListView();
-                    //UpdateTotalTimeDisplay();
+        //            // Załaduj ponownie projekty po usunięciu
+        //            LoadProjects();
+        //            UpdateListView();
+        //            //UpdateTotalTimeDisplay();
 
-                    System.Windows.MessageBox.Show("Projekt został pomyślnie usunięty.", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                catch (Exception ex)
-                {
-                    // Obsługa błędów
-                    System.Windows.MessageBox.Show($"Wystąpił błąd podczas usuwania projektu: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
+        //            System.Windows.MessageBox.Show("Projekt został pomyślnie usunięty.", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // Obsługa błędów
+        //            System.Windows.MessageBox.Show($"Wystąpił błąd podczas usuwania projektu: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        }
+        //    }
+        //}
 
 
-        private void UpdateTotalTimeDisplay(ObjectId? projectId = null)
-        {
-            if (projectId == null)
-            {
-                // Jeśli brak projectId, wyczyść TextBlock lub ustaw domyślny tekst
-                //TotalTimeTextBlock.Text = "Łączny czas: 00:00:00";
-                return;
-            }
-                //obierz łączny czas z bazy danych
-                TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
+        //private void UpdateTotalTimeDisplay(ObjectId? projectId = null)
+        //{
+        //    if (projectId == null)
+        //    {
+        //        // Jeśli brak projectId, wyczyść TextBlock lub ustaw domyślny tekst
+        //        //TotalTimeTextBlock.Text = "Łączny czas: 00:00:00";
+        //        return;
+        //    }
+        //        //obierz łączny czas z bazy danych
+        //        TimeSpan totalTime = DatabaseManager.GetTotalTimeSpentOnProject(projectId.Value);
 
-                // Zaktualizuj tekst w TextBlock
-                //TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
+        //        // Zaktualizuj tekst w TextBlock
+        //        //TotalTimeTextBlock.Text = $"Łączny czas w projekcie: {totalTime:h\\:mm\\:ss}";
             
-        }
+        //}
 
-        private void DataListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuBar_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuBar_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
     

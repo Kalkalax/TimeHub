@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="TiCloud_Desktop.views.content.DatabaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:models="clr-namespace:TiCloud.Core.Database.Models" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Background="#FFF8F8F8"
+             Height="580" Width="779">
+    <Grid>
+
+        
+    </Grid>
+</UserControl>

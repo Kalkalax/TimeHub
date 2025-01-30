@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <None Remove="core\FolderStructure.md" />
+    <None Remove="resources\images\database_icon.svg" />
     <None Remove="resources\images\home_icon.png" />
     <None Remove="resources\images\home_icon.svg" />
     <None Remove="resources\images\pause_icon.png" />
@@ -39,6 +40,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="resources\images\database_icon.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\images\home_icon.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

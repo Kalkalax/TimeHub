@@ -11,10 +11,11 @@ namespace TiCloud
         // Metoda uruchamiana podczas startu systemu
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
+            
 
             AppInitializer.Initialize();
-               
+            base.OnStartup(e);
+
         }
 
 

@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TiCloud_Desktop.views.controls" 
              xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
+             xmlns:controls="clr-namespace:TiCloud_Desktop.views.controls" 
+             xmlns:viewmodels="clr-namespace:TiCloud_Desktop.viewmodels" 
+             
              mc:Ignorable="d" 
              d:DesignHeight="649" d:DesignWidth="63">
 
@@ -32,9 +35,20 @@
         <!-- Ikona menu głównego -->
         <Button 
             Style="{DynamicResource MenuButton.xaml}" 
-            Margin="11,82,13,528">
+            Margin="11,82,13,528"
+            Command="{Binding ShowHomeCommand}">
             <Button.Content>
                 <svg:SvgViewbox Source="/resources/images/home_icon.svg" Width="24" Height="24" />
+            </Button.Content>
+        </Button>
+
+        <!-- Ikona menu bazy danych projektów -->
+        <Button 
+            Style="{DynamicResource MenuButton.xaml}" 
+            Margin="11,142,13,468"
+            Command="{Binding ShowDatabaseCommand}">
+            <Button.Content>
+                <svg:SvgViewbox Source="/resources/images/database_icon.svg" Width="24" Height="24" />
             </Button.Content>
         </Button>
 

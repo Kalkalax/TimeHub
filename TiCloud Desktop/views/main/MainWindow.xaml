@@ -1,21 +1,25 @@
-﻿<Window x:Class="TiCloud.MainWindow"
+﻿<Window x:Class="TiCloud_Desktop.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:custom="clr-namespace:TiCloud_Desktop.views.controls"
+        xmlns:local="clr-namespace:TiCloud_Desktop.viewmodels"
+
         mc:Ignorable="d"
         Title="BaseWindow" 
         WindowStartupLocation="CenterScreen" 
         Background="#FFF8F8F8"
         Loaded="Window_Loaded"
         Width="900" Height="690" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
-        
-        
-        
 
 
 
+
+
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
 
 
     <Grid>
@@ -40,105 +44,19 @@
             <ColumnDefinition Width="26"/>
         </Grid.ColumnDefinitions>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
-        
-        <ComboBox 
-        x:Name="ProjectsComboBox" 
-        DisplayMemberPath="ProjectName"
-        SelectedValuePath="ProjectID"
-        SelectionChanged="ProjectsComboBox_SelectionChanged" 
-        Margin="86,256,86,143" 
-        Grid.Column="5" Grid.Row="4" 
-         />
-
-
-
-        
-        
-        
-        <Button 
-    
-        
-        Grid.Column="5" 
-        Margin="59,122,261,277" Click="Button_Click" RenderTransformOrigin="0.517,0.501" Grid.Row="4">
-           
-
-        </Button>
-
-        
-          
-        
-        <Label x:Name="TimeLabel" 
-       Content="00:00:00" 
-       HorizontalAlignment="Left" 
-       VerticalAlignment="Top" 
-       FontSize="23"
-       Grid.Column="5" Width="115" Margin="255,82,0,0" Height="70" Grid.Row="4"
-       
-    />
-
-        
-        
-        
-        <ContentControl 
-        x:Name="MainContent"
-        Content="{Binding CurrentView}"
-        Grid.Row="4"
-        Grid.Column="3" Margin="23,52,23,307" RenderTransformOrigin="0.49,0.394"  
-    />
-
-
-        
-        
-        
-        <Button 
-        x:Name="StartStopButton" 
-        Click="StartStopButton_Click" 
-        
-        Grid.Column="5" 
-        Margin="119,122,201,277" MaxWidth="60" MaxHeight="60" Grid.Row="4">
-            
-        </Button>
 
 
 
 
 
-        <Button 
-        
-        x:Name="ResetButton" 
-    
-        Click="ResetButton_Click" 
-        Grid.Column="5" 
-        Margin="190,122,130,277" MaxWidth="60" MaxHeight="60" RenderTransformOrigin="0.483,0.551" Grid.Row="4" >
-           
-        </Button>
-
-
-
-        
-        
         <!--Boczny pasek menu-->
         <custom:MenuBar 
             Grid.Column="1"
             Grid.Row="1"
             Grid.RowSpan="4" 
             Margin="0,0,0,0"  
-            
+            DataContext="{Binding}"
         />
 
         <!--Gorny pasek timera-->
@@ -149,6 +67,16 @@
             HorizontalAlignment="Right"
         />
 
+        <ContentControl 
+            x:Name="MainContent"
+            Content="{Binding CurrentView}"
+            Grid.Row="4"
+            Grid.Column="3" 
+            Grid.ColumnSpan="3" 
+            Height="580" 
+            Width="779"
+            
+        />
 
     </Grid>
 
