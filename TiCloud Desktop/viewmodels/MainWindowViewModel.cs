@@ -1,9 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using System.Windows.Input;
-using TiCloud;
 using TiCloud_Desktop.views.content;
 
 namespace TiCloud_Desktop.viewmodels
@@ -40,6 +37,7 @@ namespace TiCloud_Desktop.viewmodels
 
             ShowHomeCommand = new RelayCommand(ExecuteShowHome);
             ShowDatabaseCommand = new RelayCommand(ExecuteShowDatabase);
+            //ShowDatabaseCommand = new RelayCommand(() => CurrentView = new DatabaseViewModel());
         }
 
         private void ExecuteShowHome()

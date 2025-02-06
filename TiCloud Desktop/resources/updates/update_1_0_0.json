@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "version": "1.0.0",
+  "releaseDate": "02.2025",
+  "description": "First version of the application",
+  "icon": {
+    "source": "/resources/images/gift_icon.svg",
+    "width": 40,
+    "height": 40,
+    "margin": "0,0,10,0"
+  }
+}

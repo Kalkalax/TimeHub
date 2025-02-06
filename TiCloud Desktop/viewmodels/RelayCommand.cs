@@ -4,16 +4,10 @@ using System.Windows.Input;
 
 namespace TiCloud_Desktop.viewmodels
 {
-    public class RelayCommand : ICommand
+    public class RelayCommand(Action execute, Func<bool>? canExecute = null) : ICommand
     {
-        private readonly Action _execute;
-        private readonly Func<bool> _canExecute;
-
-        public RelayCommand(Action execute, Func<bool> canExecute = null)
-        {
-            _execute = execute;
-            _canExecute = canExecute;
-        }
+        private readonly Action _execute = execute;
+        private readonly Func<bool> _canExecute = canExecute;
 
         public event EventHandler CanExecuteChanged;
 

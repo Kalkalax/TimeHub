@@ -6,6 +6,7 @@
              Background="#FFF8F8F8"
              Height="580" Width="779">
     <Grid>
+        <TextBlock Margin="260,215,0,0">Strona bazy danych</TextBlock>
 
         
     </Grid>
