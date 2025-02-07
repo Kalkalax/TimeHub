@@ -44,7 +44,7 @@ They can be downloaded using Git Bash:
   ```bash
   git clone --branch installers --single-branch https://github.com/Kalkalax/TiCloud
   ```
-or , just [download the latest application installer (1.1.3)](https://github.com/Kalkalax/TiCloud/archive/refs/heads/installers.zip).
+or , just [download the latest application installer (1.1.3)](https://github.com/Kalkalax/TiCloud/archive/refs/tags/v1.1.3.zip).
 
 Then follow the instructions below:
 
