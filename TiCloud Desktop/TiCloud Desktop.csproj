@@ -33,6 +33,7 @@
     <None Remove="resources\images\reload_icon.png" />
     <None Remove="resources\images\reload_icon.svg" />
     <None Remove="resources\images\TEST_IMAGE.png" />
+    <None Remove="resources\images\version_icon.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +64,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\images\TiCloud_eGp_icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\version_icon.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\updates\update_1_1_3.json">

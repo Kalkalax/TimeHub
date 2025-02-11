@@ -9,7 +9,7 @@ using TiCloud;
 
 namespace TiCloud_Desktop.core.data
 {
-    public static class UpdateFolderManager
+    public static class UpdateInfoManager
     {
 
         public static readonly string UpdatesFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "updates");

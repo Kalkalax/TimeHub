@@ -72,12 +72,15 @@
             FontWeight="Bold"
         />
 
-        <custom:UpdateTile 
-            HorizontalAlignment="Center" Margin="0,315,0,193" 
+        
+        
+        
+
+        <custom:UpdateTileList Margin="0,315,0,20">
             
             
-    
-        />
+            
+        </custom:UpdateTileList>
 
     </Grid>
 </UserControl>

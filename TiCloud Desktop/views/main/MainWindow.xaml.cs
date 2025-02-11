@@ -32,7 +32,7 @@ namespace TiCloud_Desktop
             InitializeComponent();
 
             // Sprawdzenie listy aktualizacji
-            Debug.WriteLine($"Znaleziono {UpdateFolderManager.CountUpdateFiles()} aktualizacji");
+            Debug.WriteLine($"Znaleziono {UpdateInfoManager.CountUpdateFiles()} aktualizacji");
 
             DataContext = new MainWindowViewModel();
 

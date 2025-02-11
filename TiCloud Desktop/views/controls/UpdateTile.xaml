@@ -9,21 +9,35 @@
     <Grid>
 
 
+        <Border Background="#FFFEFEFE" 
+                CornerRadius="15,15,15,15">
+
+        </Border>
+
 
         <Button Style="{DynamicResource UpdateTileButton.xaml}" 
-                Click="Button_Click">
+                Click="Button_Click" 
+                Background="#00808080" BorderBrush="#00707070" Foreground="#00000000" BorderThickness="0,0,0,0"/>
 
-            <Button.Content>
-                <svg:SvgViewbox Source="/resources/images/database_icon.svg" Width="24" Height="24" />
-            </Button.Content>
-        </Button>
+        <Border Margin="10,10,315,10"
+                Background="#FF0D0D0D" 
+                CornerRadius="7,7,7,7">
 
+            <svg:SvgViewbox Source="/resources/images/gift_icon.svg" Width="34" Height="34" />
 
+        </Border>
 
+        <TextBlock 
+            Margin="95,18,215,36" 
+            Text="2.0.0" 
+            Width="70" 
+            Foreground="#FF343435" FontSize="13"/>
 
+        <TextBlock 
+             Margin="75,36,5,14" 
+             Foreground="#FF0D0D0D" FontSize="14"><Run Language="pl-pl" Text="First version of the application"/></TextBlock>
 
-
-
+        <svg:SvgViewbox Source="/resources/images/version_icon.svg" Width="15" Height="15" Margin="75,21,290,36" RenderTransformOrigin="1.333,0.267" />
 
 
 
