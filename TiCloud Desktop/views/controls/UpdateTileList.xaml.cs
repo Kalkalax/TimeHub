@@ -37,9 +37,10 @@ namespace TiCloud_Desktop.views.controls
 
             for (int i = 0; i <= count-1; i++) // Użycie 'count' jako wartości początkowej
             {
-                UpdateTile b = new UpdateTile
+                UpdateTileButton b = new()
                 {
-                    Margin = new Thickness(0, 0, 0, 10)
+                    Margin = new Thickness(0, 0, 0, 10),
+                    
                 };
 
                 UpdateTileListPanel.Children.Add(b);
